@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "body-parser": "registry:dt/body-parser#0.0.0+20160726204056",
+        "chai": "registry:npm/chai#3.5.0+20160723033700",
+        "express": "registry:dt/express#4.0.0+20161115070701",
+        "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20161228005052",
+        "mime": "registry:dt/mime#0.0.0+20160428043022",
+        "serve-static": "registry:dt/serve-static#1.7.1+20161128184045"
+    },
+    "globalDependencies": {
+        "mocha": "registry:dt/mocha#2.2.5+20170204022515",
+        "node": "registry:dt/node#6.0.0+20170106143713"
+    }
+}
