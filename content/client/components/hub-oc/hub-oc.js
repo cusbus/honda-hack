@@ -3,15 +3,15 @@
 
 angular.module('client.crud').component('hubOc',{
     templateUrl: 'client/components/hub-oc/hub-oc.html',
-    controller:'hubOcComponent as ctrl'
+    controller:'hubOcController as ctrl'
 })
 
     angular.module('client.crud')
-        .controller('hubOcComponent', HubOcComponent)
+        .controller('hubOcController', HubOcController)
 
-    HubOcComponent.$inject = ['$log']
+    HubOcController.$inject = ['$log']
 
-    function HubOcComponent($log) {
+    function HubOcController($log) {
         const vm = this
         vm.$onInit = _init
  
