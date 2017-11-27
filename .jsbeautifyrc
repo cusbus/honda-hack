@@ -1,0 +1,4 @@
+{
+    "end_with_newline": true,
+    "brace_style": "collapse, preserve-inline"
+}

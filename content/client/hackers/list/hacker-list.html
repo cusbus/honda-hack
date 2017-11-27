@@ -1,0 +1,49 @@
+<div class="jumbotron text-center">
+    <h1>Hackers and Proud</h1>
+
+    <p>{{hackerCtrl.tagline}}</p>
+</div>
+
+
+
+
+
+<div class="clearfix">
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="control-label" for="Name">Name</label>
+            <input type="text" ng-model="hackerCtrl.formData.name" class="form-control" id="Name" placeholder="Name">
+        </div>
+        <button type="button" ng-click="hackerCtrl.create()" class="btn btn-default">Send</button>
+        <button type="button" ng-click="hackerCtrl.update()" class="btn btn-default">Update</button>
+    </form>
+
+</div>
+
+
+
+
+
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Hacker</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="hacker in hackerCtrl.hackers">
+                <td>{{hacker.name}}</td>
+                <td>
+                    <button type="button" ui-sref="^.detail({id: hacker._id})" class="btn btn-primary">View</button>
+                    <button type="button" id="edit" ng-click="hackerCtrl.formData = hacker" class="btn btn-primary">Edit</button>
+                    <button type="button" ng-click="hackerCtrl.delete(hacker._id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
