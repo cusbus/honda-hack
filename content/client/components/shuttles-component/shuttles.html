@@ -2,11 +2,9 @@
     <form>
         <label for="services"></label>
         <h4>Metro/Hubub Service Packages:</h4>
-        <uib-tabset active="active">
-            <uib-tab index="0" heading="Hubub Basic">
-                {{$ctrl.hub}} Hubub Basic ${{$ctrl.rates.metroP}}
-                <br>
-                Hubub Basic includes 7-day standard access to all Metro services. Including:
+        <uib-tabset active="">
+            <uib-tab index="0" heading="Metro Basic"> {{$ctrl.hub}} Hubub Basic ${{$ctrl.rates.metroP}}
+                <br> Hubub Basic includes 7-day standard access to all Metro services. Including:
                 <br>
                 <ul>
                     <li>Metro Rail</li>
@@ -16,10 +14,9 @@
                         Select</button>
                 </ul>
             </uib-tab>
-            <hr />
-            <uib-tab index="0" heading="Hubub Plus">
-                {{$ctrl.hub}} Hubub Plus ${{$ctrl.rates.metroP}}
-                <br>Hubub Plus includes all Hubub Basic services in addition to reservered Hubub Charter Shuttles and access to local Hubub Micro-Shuttles.
+            <uib-tab index="1" heading="Metro Plus"> {{$ctrl.hub}} Hubub Plus ${{$ctrl.rates.metroP}}
+                <br>Hubub Plus includes all Hubub Basic services in addition to reservered Hubub Charter Shuttles and access
+                to local Hubub Micro-Shuttles.
                 <ul>
                     <li>Charter Shuttle express routes</li>
                     <li>More frequent departures/pickups</li>
@@ -28,15 +25,17 @@
                 <button ui-sref="site.payment" class='btn btn-info pull-right'>
                     Select</button>
             </uib-tab>
-            <hr />
-            <uib-tab index="0" heading="Hubub SuperPlus">
-                {{$ctrl.hub}} Hubub SuperPlus ${{$ctrl.rates.metroSP}}
-                <br>
-                Hubub SuperPlus includes all Hubub Basic and Plus services and enjoy the benefit of extended-range Hub2Hub Micro Shuttles
-                <ul><li>Enjoy Micro Shuttle Service to-and-from any Hub</li></ul>
+            <uib-tab index="2" heading="Metro Super Plus"> {{$ctrl.hub}} Hubub SuperPlus ${{$ctrl.rates.metroSP}}
+                <br> Hubub SuperPlus includes all Hubub Basic and Plus services and enjoy the benefit of extended-range Hub2Hub
+                Micro Shuttles
+                <ul>
+                    <li>Enjoy Micro Shuttle Service to-and-from any Hub</li>
+                    <li>Highest frequency of departures/pickups</li>
+                </ul>
                 <button ui-sref="site.payment" class='btn btn-info pull-right'>
                     Select</button>
             </uib-tab>
+            <hr />
         </uib-tabset>
     </form>
 </div>
