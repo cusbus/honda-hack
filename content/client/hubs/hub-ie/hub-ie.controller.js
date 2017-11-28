@@ -4,9 +4,9 @@
     angular.module('client.hubs')
         .controller('hubInlandEmpireController', HubInlandEmpireController)
 
-        HubInlandEmpireController.$inject = ['$log']
+        HubInlandEmpireController.$inject = ['$log', '$window']
 
-    function HubInlandEmpireController($log) {
+    function HubInlandEmpireController($log, $window) {
         var vm = this
         vm.hub = "Inland Empire"
         vm.rates = {
@@ -18,7 +18,7 @@
         init()
 
         function init() {
-
+            $window.scrollTo(0, 0);
         }
 
 
