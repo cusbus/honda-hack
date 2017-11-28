@@ -7,8 +7,8 @@
             controller: PaymentController
         })
 
-    PaymentController.$inject = ['$http', '$log',"toastr"]
-    function PaymentController($http, $log,toastr) {
+    PaymentController.$inject = ['$http', '$log',"$state","toastr"]
+    function PaymentController($http, $log,$state,toastr) {
         let $ctrl = this
         $ctrl.submit = _submit
 
