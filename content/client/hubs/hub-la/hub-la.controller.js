@@ -4,11 +4,10 @@
     angular.module('client.hubs')
         .controller('hubLaController', HubLaController)
 
-    HubLaController.$inject = ['sendGridService','$log']
+    HubLaController.$inject = ['$log']
 
-    function HubLaController(sendGridService, $log) {
+    function HubLaController($log) {
         var vm = this
-        vm.sendEmail = _sendEmail
 
         init()
         vm.hub = "Los Angeles"
@@ -23,12 +22,5 @@
 
 
         }
-
-        function _sendEmail() {
-            sendGridService.sendGrid()
-            .then(data => console.log(`this means you got it right! ${data}`))
-            .catch(data => console.log(`WRONG ${data}`))
-        }
-
     }
 })();
