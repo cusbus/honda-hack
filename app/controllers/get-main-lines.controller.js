@@ -5,7 +5,6 @@ module.exports = {
     getMainLines: getMainLines
 }
 
-
 function getMainLines(req, res) {
     console.log('Get main lines running...');
     request.get('https://api.go511.com/api/mainlineroutes?key=93a61394a8eeae835f7d4b7a0d3597cd&format=json', {json: true}, (err, data) => {
@@ -15,7 +14,6 @@ function getMainLines(req, res) {
         }
         const responseModel = new responses.ItemsResponse();
         responseModel.items = data;
-        res.json(responseModel);
-        
+        res.json(responseModel);      
     });
 }

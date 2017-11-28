@@ -1,3 +1,289 @@
+.site-body {
+    margin-top: 5em;
+}
+
+
+/*-----------------------------------------overwriting default navbar colors-----------------------------------*/
+
+.navbar {
+    background-color: #2f4858;
+}
+
+.navbar .navbar-brand {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color: #77b6ea;
+}
+
+.navbar .navbar-text {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ecf0f1;
+    border-radius: .25rem;
+    margin: 0 0.25em;
+}
+
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+    color: #77b6ea;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+    background-color: #2f4858;
+    border-color: #175676;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+    color: #ecf0f1;
+    margin-left: 10px;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+    color: #77b6ea;
+    background-color: #175676;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-divider {
+    border-top-color: #175676;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+    color: #77b6ea;
+    background-color: #175676;
+}
+
+.navbar .dropdown-toggle:hover {
+    color: #77b6ea;
+}
+
+.navbar .navbar-toggle {
+    border-color: #175676;
+}
+
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+    background-color: #175676;
+}
+
+.navbar .navbar-toggle .navbar-toggler-icon {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+    border-color: #ecf0f1;
+}
+
+.navbar .navbar-link {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-link:hover {
+    color: #77b6ea;
+}
+
+@media (max-width: 575px) {
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+    }
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #77b6ea;
+    }
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #77b6ea;
+        background-color: #175676;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+    }
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #77b6ea;
+    }
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #77b6ea;
+        background-color: #175676;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+    }
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #77b6ea;
+        
+    }
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #77b6ea;
+        background-color: #175676;
+    }
+}
+
+@media (max-width: 1199px) {
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+    }
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #77b6ea;
+    }
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #77b6ea;
+        background-color: #175676;
+    }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #ecf0f1;
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #77b6ea;
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #77b6ea;
+    background-color: #175676;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ecf0f1;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #77b6ea;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
+    cursor: pointer;
+    background: #2F4858;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #77B6EA;
+    background-color: #2F4858;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #eee;
+    border-color: #2F4858;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar .nav>li>a,
+.navbar .nav {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.red {
+    color: #BA324F;
+}
+
+.darkBlue {
+    color: #2F4858;
+}
+
+.blue {
+    color: #175676;
+}
+
+.lightBlue {
+    color: #77B6EA;
+}
+
+.lightGreen {
+    color: #CCF5AC;
+}
+
+.white {
+    color: white;
+}
+
+.bg-red {
+    background-color: #BA324F;
+}
+
+.bg-darkBlue {
+    background-color: #2F4858;
+}
+
+.bg-blue {
+    background-color: #175676;
+}
+
+.bg-lightBlue {
+    background-color: #77B6EA;
+}
+
+.bg-lightGreen {
+    background-color: #CCF5AC;
+}
+
+.round-borders {
+    border-radius: 5px
+}
+
+.round-borders-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bordered {
+    border: 1px solid lightgrey;
+}
+
+.panel-class {
+    background-color: #175676;
+    color: white;
+}
+
+.panel-body {
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+* {
+    box-sizing:border-box;
+  }
+  
+  video {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+  
 .site-body{
     margin-top:5em;
 }
@@ -5,4 +291,19 @@
 .layer-toggle-margin {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.footer {
+    position: absolute;
+    margin: 0 auto -100000000000000000000000000000px; 
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    text-align: center;
+    color: white;
+    background-color: rgb(58, 57, 57);
+  }
+  
+.hub-picture-resize {
+    height: 350px;
 }
