@@ -10,9 +10,11 @@
         somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
 
     <h3>What's the Hubbub?</h3>
-    <!-- ******************************** MAP GOES HERE **************************************** -->
+    <map-component></map-component>
+    <div>
+        <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
+    </div>
 
-    <!-- <div>Available Routes</div>  -->
 
     <h3>Local Activities</h3>
     <uib-accordion>
@@ -48,8 +50,5 @@
         </div>
     </uib-accordion>
 
-    <div>
-        <h3>Hubbub Metro Services</h3>
-        <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
-    </div>
+   
 </div>
