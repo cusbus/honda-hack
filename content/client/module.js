@@ -26,7 +26,8 @@
         'client.hub-oc',
         'client.hubs',
         "client.metrics",
-        "client.seatcheck"
+        "client.seatcheck",
+        "client.events"
     ])
 
     angular.module('client')
