@@ -25,7 +25,8 @@
         'client.components',
         'client.map',
         'client.hubs',
-        "client.metrics"
+        "client.metrics",
+        "client.seatcheck"
     ])
 
     angular.module('client')
