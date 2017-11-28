@@ -7,9 +7,6 @@
 
     function HomeController() {
         var $ctrl = this;
-
-
-     
     
     }
 
