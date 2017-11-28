@@ -7,18 +7,20 @@
             controller: PaymentController
         })
 
-    PaymentController.$inject = ['$http', '$log', "$state", "toastr"]
-    function PaymentController($http, $log, $state, toastr) {
+    PaymentController.$inject = ['$http', '$log', "$state", "toastr", 'paymentService']
+    function PaymentController($http, $log, $state, toastr, paymentService) {
         let $ctrl = this
         $ctrl.submit = _submit
 
         $ctrl.name = 'Joe Tourist'
         $ctrl.cardNumber = '****-****-****-9090'
-        // $ctrl.cardSecCode = '900'
+        $ctrl.cardSecCode = '900'
         $ctrl.addressA = '1034 Traveling St'
         $ctrl.city = 'Topeka'
         $ctrl.state = 'KS'
         $ctrl.zip = '66605'
+        $ctrl.cardExpirationMonth = '02'
+        $ctrl.cardExpirationYear = '2019'
 
         init()
 
@@ -39,11 +41,14 @@
                 state: $ctrl.state,
                 zip: $ctrl.zip
             }
-            toastr.success('Success!!')
-            $log.log(reservation)
-            $state.go('site.confirmation')
-            // shuttleService.submitPayment(reservation)
-            //     .then(result => alert('Reservation Completed!'))
+            // paymentService.create(reservation)
+            //     .then(result => {
+                    toastr.success('Success!!')
+                    $state.go('site.confirmation')
+                // })
+                // .catch(err => $log.log(err))
+            
+            
         }
 
 
