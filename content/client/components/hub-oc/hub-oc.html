@@ -4,6 +4,7 @@
     <p>Orange County's 3 million residents enjoy a nearly perfect climate in which parks and beaches provide abundant opportunities for outdoor activities. Orange County is the home of exciting professional sports, a wide range of tourist attractions and quality venues for visual and performing arts. Orange County boasts a thriving business economy and a well educated work force. The County of Orange is a regional service provider and planning agency whose core businesses include public safety, public health, environmental protection, regional planning, public assistance, social services and aviation.</p>
 
     <h3>Proximity to Events</h3>
+    <p>OC Hub </p>
 
     <!-- routes for shuttles -->
     <h3>Available Routes</h3>
@@ -12,7 +13,34 @@
     </div>
 
     <h3>Local Activities</h3>
-    <div>
+    <uib-accordion>
+        <div uib-accordion-group class="panel-default" heading="OC Activities">
+            <a href="">- Disneyland Resort</a>
+            <a href="">- Knott's Berry Farm</a>
+            <a href="">- Little Saigon</a>
+            <a href="">- The Children's Museum at La Habra</a>
+            <a href="">- Bowers Museum</a>
+            <a href="">- Discovery Science Center</a>
+        </div>
+    </uib-accordion>
+    <uib-accordion>
+        <div uib-accordion-group class="panel-default" heading="OC Shopping">
+            <a href="">- Westfield MainPlace</a>
+            <a href="">- Asian Garden Mall</a>
+            <a href="">- Anaheim GardenWalk</a>
+            <a href="">- Anaheim Plaza</a>
+            <a href="">- South Coast Plaza</a>
+            <a href="">- Irvine Spectrum Center</a>
+        </div>
+    </uib-accordion>
+    <uib-accordion>
+        <div uib-accordion-group class="panel-default" heading="OC Sports">
+            <a href="">- Anaheim Ducks</a>
+            <a href="">- Los Angeles Angels of Anaheim</a>
+        </div>
+    </uib-accordion>
+
+    <!-- <div>
         <h4>OC Activities</h4>
         <a href="">- Disneyland Resort</a>
         <a href="">- Knott's Berry Farm</a>
@@ -34,18 +62,16 @@
         <h4>OC Sports</h4>
         <a href="">- Anaheim Ducks</a>
         <a href="">- Los Angeles Angels of Anaheim</a>
-    </div>
+    </div> -->
 
     <h3>Cost</h3>
-    <div>
-        <h4>Metro Basic</h4>
-    </div>
-    <div>
-        <h4>Metro Plus</h4>
-    </div>
-    <div>
-        <h4>Super Metro Plus</h4>
-    </div>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Metro Basic">Metro basic includes....</uib-tab>
+        <hr />
+        <uib-tab index="0" heading="Metro Plus">Metro plus includes....</uib-tab>
+        <hr />
+        <uib-tab index="0" heading="Super Metro Plus">Super metro plus includes....</uib-tab>
+    </uib-tabset>
 
     <!-- <ul>
         <li>La Habra</li>
