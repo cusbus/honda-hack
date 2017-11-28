@@ -1,21 +1,27 @@
-(function (){
+(function () {
     'use strict';
 
     angular
         .module('client.map')
         .controller('mapController', MapController);
 
-    MapController.$inject=['$scope'];
+    MapController.$inject = [];
 
-    function MapController($scope){
-        var vm = this;
-        vm.$scope = $scope;
-        vm.$onInit = _onInit;
+    function MapController() {
+        var $ctrl = this;
+  
+        var map;
 
-        function _onInit(){
-            console.log('onInit: mapController');
-            
+        $ctrl.$onInit = () => {
+            $ctrl.initalizeMap();
+        }
+
+        $ctrl.initalizeMap = () => {
+            var maptype = google.maps.MapTypeId.ROADMAP
+            var losangeles = new google.maps.LatLng(33.881624, -118.142158);
+            var mapOptions = { zoom: 11, mapTypeId: maptype, center: losangeles, gestureHandling: 'auto', scrollwheel: false }
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
         }
     }
-        
+
 })();
