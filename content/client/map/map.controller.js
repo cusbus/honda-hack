@@ -7,6 +7,7 @@
     MapController.$inject = ["toastr", "sendGridService"];
     function MapController(toastr, sendGridService) {
         var vm = this;
+        vm.total;
 
         vm.initalizeMap = initalizeMap;
         vm.mapLayers = mapLayers;
@@ -34,12 +35,6 @@
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: { lat: 34.041025, lng: -118.269642 }
-            });
-
-            var marker2 = new google.maps.Marker({
-                position: myLatLng2,
-                map: map,
-                title: 'Hub2'
             });
 
             //draggable routes
@@ -80,22 +75,18 @@
             for (var i = 0; i < myroute.legs.length; i++) {
                 total += myroute.legs[i].distance.value;
             }
-            total = total / 1000;
-            document.getElementById('total').innerHTML = total + ' km';
+            total = total / 1000/0.621371;
+            document.getElementById('total').innerHTML = total.toFixed(2) + ' mi';
         }
 
         vm.layer1 = new google.maps.TransitLayer();
-        vm.layer2 = new google.maps.Marker({
-            position: myLatLng1,
-            map: map,
-            title: 'Hub1'
-        });
+        vm.layer2 =new google.maps.TrafficLayer();
         vm.layer3 = new google.maps.Data();
         vm.layer4 = new google.maps.Data();
         vm.layer5 = new google.maps.Data();
         vm.layer6 = new google.maps.Data();
-
-
+        vm.bikeLayer = new google.maps.BicyclingLayer();
+ 
         function mapLayers() {
             vm.geo1 = 'client/map/geojson/rec-parks.geojson';
             vm.geo2 = 'client/map/geojson/hist-mon.geojson';
@@ -107,6 +98,9 @@
             vm.layer4.loadGeoJson(vm.geo2);
             vm.layer5.loadGeoJson(vm.geo3);
             vm.layer6.loadGeoJson(vm.geo4);
+            
+            
+      
 
             var bikeMarker = '../css/images/bikeshare2.png';
             var parkMarker = '../css/images/nature2.png';
@@ -116,6 +110,7 @@
             vm.layer4.setMap(map);
             vm.layer5.setMap(map);
             vm.layer6.setMap(map);
+            vm.bikeLayer.setMap(map);
            vm.layer6.setStyle({icon: bikeMarker}) 
            vm.layer3.setStyle({icon: parkMarker}) 
         }
@@ -195,6 +190,7 @@
             vm.layer5.setMap(vm.layer5.getMap() ? null : map);
         }
         vm.toggleLayer6 = () => {
+            vm.bikeLayer.setMap(vm.bikeLayer.getMap() ? null : map);
             vm.layer6.setMap(vm.layer6.getMap() ? null : map);
         }
 
