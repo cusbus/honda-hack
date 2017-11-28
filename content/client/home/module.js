@@ -31,7 +31,6 @@
                     }
                 }
             })
-<<<<<<< HEAD
             .state('site.hub-request', {
                 url: '/request-hub',
                 views: {
@@ -40,7 +39,6 @@
                     }
                 }
             })
-=======
             .state('site.admin', {
                 url: '/admin',
                 views: {
@@ -50,9 +48,6 @@
                     }
                 }
             })
-            
-
-
->>>>>>> c64be685439ef847642a9d623bfde47cf86284d8
-    }
+      }
 })()
+ 
