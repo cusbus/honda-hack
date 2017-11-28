@@ -9,7 +9,7 @@
         'ui.bootstrap',
         "highcharts-ng",
         'toastr',
-        
+
         //base / common
         'client.layout',
         'client._common',
