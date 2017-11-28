@@ -1,0 +1,143 @@
+    <div class="container">
+    <form>
+        <div class="form-group">
+            <label for="cardName">Card Holder's Name</label>
+            <input type="" ng-model="$ctrl.cardName" name="cardName" class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="cardType">Credit Card Type</label>
+            <div class="selectContainer">
+                <select ng-model="$ctrl.cardType" name="cardType" class="form-control" name="cardType">
+                    <option value="">Select a type</option>
+                    <option value="visa">Visa
+                        <span>
+                            <img src="images/visa.js">
+                        </span>
+                    </option>
+                    <option value="otherGuys">the other guys</option>
+                    <option value="otherOtherGuys">the other other guys</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" ng-model="$ctrl.cardNumber" name="cardNumber" class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="cardExpiration">Card Expiration Date</label>
+            <div class="selectContainer">
+                <select xclass="form-control" ng-model="$ctrl.cardExpirationMonth" name="cardExpirationMonth">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select xclass="form-control" ng-model="$ctrl.cardExpirationYear" name="cardExpirationYear">
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cardSecCode">Security Code</label>
+            <input name="cardSecCode" ng-model="$ctrl.cardSecCode" maxlength="4" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="addressA">Address 1</label>
+            <input name="addressA" ng-model="$ctrl.addressA" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="addressB">Address 2</label>
+            <input name="addressB" ng-model="$ctrl.addressB" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input name="city" ng-model="$ctrl.city" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <select name="state" ng-model="$ctrl.state" class="form-control">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="AA">Armed Forces - Americas</option>
+                <option value="AE">Armed Forces - Europe</option>
+                <option value="AP">Armed Forces - Pacific</option>
+                <option selected="selected" value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input name="zip" ng-model="$ctrl.zip" class="form-control">
+        </div>
+        <button type="button" class="btn btn-success">Submit</button>
+    </form>
+</div>
