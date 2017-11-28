@@ -22,7 +22,8 @@
     "joi-objectid": "^2.0.0",
     "mongodb": "^2.2.31",
     "node-uuid": "^1.4.7",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "sendgrid": "^5.2.3"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",
