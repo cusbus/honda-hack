@@ -2,5 +2,11 @@
   "ExpandedNodes": [
     "\\app"
   ],
+    "":
+    "\\content",
+    "\\content\\client":
+    "\\content\\client\\layout"
+  ,
+  "SelectedNode": "\\content\\client\\layout\\mapPractice.html",
   "PreviewInSolutionExplorer": false
 }
