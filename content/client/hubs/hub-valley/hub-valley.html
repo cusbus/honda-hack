@@ -10,10 +10,10 @@
 
 <h3>Local Activities</h3>
 <uib-accordion>
-    <div uib-accordion-group class="panel-class">
-        <uib-accordion-heading class="bg-blue">
+    <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+        <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
             <div uib-accordion-header>
-                San Fernando Valley Activities
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Activities
             </div>
         </uib-accordion-heading>
         <a href="https://www.wbstudiotour.com/">- Warner Bros Studio Tour</a>
@@ -28,10 +28,10 @@
     </div>
 </uib-accordion>
 <uib-accordion>
-    <div uib-accordion-group class="panel-class">
-        <uib-accordion-heading class="bg-blue">
+    <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+        <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
             <div uib-accordion-header>
-                San Fernando Valley Shopping
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Shopping
             </div>
         </uib-accordion-heading>
         <a href="http://www.shermanoaksgalleria.com/">- Sherman Oaks Galleria</a>

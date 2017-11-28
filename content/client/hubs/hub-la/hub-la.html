@@ -3,20 +3,20 @@
 
 <p>California is a dream destination for many and with endless sunshine, a local, luxury lifestyle and an abundance of things to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and this fantastic
     destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
- 
+
 
 <h3>What's the Hubub?</h3>
 
 <div>
     <shuttles-component rates="laCtrl.rates" hub="laCtrl.hub"></shuttles-component>
-</div> 
+</div>
 
 <h3>Local Activities</h3>
 <uib-accordion>
-    <div uib-accordion-group class="panel-class">
-        <uib-accordion-heading class="bg-blue">
+    <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+        <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
             <div uib-accordion-header>
-                LA Activities
+                <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> LA Activities
             </div>
         </uib-accordion-heading>
         <a href="http://www.getty.edu/">- Getty Center</a>
@@ -33,10 +33,10 @@
     </div>
 </uib-accordion>
 <uib-accordion>
-    <div uib-accordion-group class="panel-class">
-        <uib-accordion-heading class="bg-blue">
+    <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+        <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
             <div uib-accordion-header>
-                LA Shopping
+                <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> LA Shopping
             </div>
         </uib-accordion-heading>
         <a href="https://www.westfield.com/topanga">- Westfield</a>
@@ -51,10 +51,10 @@
     </div>
 </uib-accordion>
 <uib-accordion>
-    <div uib-accordion-group class="panel-class">
-        <uib-accordion-heading class="bg-blue">
+    <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+        <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
             <div uib-accordion-header>
-                LA Sports
+                <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> LA Sports
             </div>
         </uib-accordion-heading>
         <a href="http://www.nba.com/lakers/">- Los Angeles Lakers</a>
@@ -68,6 +68,3 @@
         <a href="http://www.chargers.com/">- Los Chargers</a>
     </div>
 </uib-accordion>
-
-
-
