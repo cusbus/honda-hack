@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    angular.module('client.map', ['ui.router'])
-            .config(RouteConfig);
+   angular.module('client.map', ['ui.router'])
+           .config(RouteConfig);
 
     RouteConfig.$inject = ['$stateProvider']
 
