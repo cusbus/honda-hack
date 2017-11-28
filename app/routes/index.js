@@ -12,6 +12,7 @@ const getMessageSigns = require('./get-message-signs.routes')
 const getTransitProviders = require('./get-transit-providers.routes')
 const getParkRideLots = require('./get-park-ride-lots.routes')
 const clientRoutes = require('./client.routes')
+const emailsRoutes = require('./emails.routes')
 
 // authentication
 const authenticate = require('../filters/authenticate')
@@ -34,6 +35,7 @@ router.use('/api/get-road-ways', getRoadWays)
 router.use('/api/get-message-signs', getMessageSigns)
 router.use('/api/get-transit-providers', getTransitProviders)
 router.use('/api/get-park-ride-lots', getParkRideLots)
+router.use('/api/emails', emailsRoutes)
 
 // router.use('/api/entities', entitiesRoutes)
 // router.use('/api/examples', examplesRoutes)

@@ -4,9 +4,9 @@
     angular.module('client.hubs')
         .controller('hubLaController', HubLaController)
 
-    HubLaController.$inject = ['sendGridService','$log']
+    HubLaController.$inject = ['EmailsServiceFactory', '$log']
 
-    function HubLaController(sendGridService, $log) {
+    function HubLaController(EmailsServiceFactory, $log) {
         var vm = this
         vm.sendEmail = _sendEmail
 
@@ -17,9 +17,9 @@
         }
 
         function _sendEmail() {
-            sendGridService.sendGrid()
-            .then(data => console.log(`this means you got it right! ${data}`))
-            .catch(data => console.log(`WRONG ${data}`))
+            EmailsServiceFactory.sendEmail()
+                .then(data => console.log(`this means you got it right! ${data}`))
+                .catch(data => console.log(`WRONG ${data}`))
         }
 
     }
