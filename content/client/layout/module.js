@@ -21,6 +21,11 @@
                         templateUrl: 'client/layout/navbar/navbar.html',
                         controller: 'navbarController as navbarCtrl',
                     }
+                    ,
+                    'footer@site': {
+                        templateUrl: 'client/layout/footer/footer.html',
+                        controller: 'footerController as ctrl'
+                    }
                 }
             })
     }
