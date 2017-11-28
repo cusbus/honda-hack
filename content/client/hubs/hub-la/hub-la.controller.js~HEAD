@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('client.site')
+    angular.module('client.hubs')
         .controller('hubLaController', HubLaController)
 
     HubLaController.$inject = ['$log']

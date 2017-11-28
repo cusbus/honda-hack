@@ -4,11 +4,11 @@
     RouteConfig.$inject = ['$stateProvider'];
     function RouteConfig($stateProvider) {
         $stateProvider
-        .state('site.hubs', {
-            url: '/hubs',
-            abstract: true
-        })
             // route for the home page
+            .state('site.hubs', {
+                url: '/hubs',
+                abstract: true
+            })
             .state('site.hubs.hub-la', {
                 url: '/hub-la',
                 views: {
@@ -18,7 +18,6 @@
                     }
                 }
             })
-
             
     }
 
