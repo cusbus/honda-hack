@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('client.home', ['ui.router']).config(RouteConfig);
+    angular.module('client.seatcheck', ['ui.router']).config(RouteConfig);
     RouteConfig.$inject = ['$stateProvider'];
     function RouteConfig($stateProvider) {
         $stateProvider
