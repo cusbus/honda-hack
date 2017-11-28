@@ -398,3 +398,7 @@ video#bgvid {
 .bg-white {
     background-color: white;
 }
+
+.home-pointer:hover { 
+    cursor: pointer;
+}
