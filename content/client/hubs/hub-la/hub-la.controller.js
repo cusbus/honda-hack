@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('client.hubs')
@@ -11,8 +11,16 @@
         vm.sendEmail = _sendEmail
 
         init()
+        vm.hub = "Los Angeles"
+        vm.rates = {
+            metroB: '195.95',
+            metroP: '245.95',
+            metroSP: '300.00'
+        }
+
 
         function init() {
+
 
         }
 
