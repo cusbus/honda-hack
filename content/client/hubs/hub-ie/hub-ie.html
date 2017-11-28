@@ -3,10 +3,8 @@
         <h1>Welcome to the Inland Empire Hub</h1>
         <img class="hub-picture-resize" src="\content\css\images\riverside.jpg"></img>
     </div>
-    <p style="margin-top:25px; margin-bottom:25px;">California is a dream destination for many and with endless sunshine, a local, luxury lifestyle and an abundance of things
-        to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and
-        this fantastic destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for
-        somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
+    <p style="margin-top:25px; margin-bottom:25px;">California is a dream destination for many and with endless sunshine, a local, luxury lifestyle and an abundance of things to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and this fantastic
+        destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
 
     <h3>What's the Hubub?</h3>
     <!-- ******************************** MAP GOES HERE **************************************** -->
@@ -14,52 +12,43 @@
 
     <h3>Local Activities</h3>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    Inland Empire Activities
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> Inland Empire Activities
                 </div>
             </uib-accordion-heading>
-            <a href="http://www.getty.edu/">- Getty Center</a>
+            <a href="https://www.castlepark.com/">- Castle Park</a>
             <br />
-            <a href="http://www.universalstudioshollywood.com/">- Universal Studios</a>
+            <a href="http://www.parks.ca.gov/?page_id=649">- Citris State Historic Park</a>
             <br />
-            <a href="http://www.griffithobservatory.org/">- Griffith Observatory</a>
+            <a href="http://missioninnmuseum.org/">- Mission Inn Museum</a>
             <br />
-            <a href="http://www.laparks.org/griffithpark">- Griffith Park</a>
+            <a href="http://www.mt-rubidoux.org/">- Mount Rubidoux</a>
             <br />
-            <a href="https://hollywoodsign.org/">- Hollywood Sign</a>
+            <a href="https://www.pstramway.com/">- Palm Springs Aerial Tramways</a>
             <br />
-            <a href="http://www.lazoo.org/">- LA Zoo</a>
+            <a href="http://www.missioninn.com/">- Mission Inn</a>
+            <br />
+            <a href="https://vanburendriveintheatre.com/">- Van Buren Drive-in Theater</a>
         </div>
     </uib-accordion>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    Inland Empire Shopping
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> Inland Empire Shopping
                 </div>
             </uib-accordion-heading>
-            <a href="http://www.getty.edu/">- Getty Center</a>
+            <a href="https://www.galleriatyler.com/en.html">- Galleria at Tyler</a>
             <br />
-            <a href="http://www.universalstudioshollywood.com/">- Universal Studios</a>
+            <a href="http://shopdoslagos.com/">- Dos Lagos</a>
             <br />
-            <a href="http://www.griffithobservatory.org/">- Griffith Observatory</a>
+            <a href="https://www.promenadetemecula.com/">- Promenade Temecula</a>
             <br />
-            <a href="http://www.laparks.org/griffithpark">- Griffith Park</a>
-            <br />
-            <a href="https://hollywoodsign.org/">- Hollywood Sign</a>
-            <br />
-            <a href="http://www.lazoo.org/">- LA Zoo</a>
+            <a href="http://shopcrossingsatcorona.com/event/shop-til-you-drop-for-a-cause/">- Crossings at Corona</a>
         </div>
     </uib-accordion>
 
-    <h4>Cost</h4>
-    <uib-tabset active="active">
-        <uib-tab index="0" heading="Metro Basic">Metro basic includes....</uib-tab>
-        <uib-tab index="1" heading="Metro Plus">Metro plus includes....</uib-tab>
-        <uib-tab index="2" heading="Super Metro Plus">Super metro plus includes....</uib-tab>
-        <hr />
-    </uib-tabset>
 
 </div>
