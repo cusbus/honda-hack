@@ -2,10 +2,10 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a id="brand" class="navbar-brand" href="/">Hubbub &reg;</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -22,21 +22,33 @@
                     </div>
                     <li>
                         <a class="nav-link" ui-sref="site.map">
-                          <i class="fa fa-fw fa-file"></i>
-                          <span class="nav-link-text">Map</span>
+                            <i class="fa fa-fw fa-file"></i>
+                            <span class="nav-link-text">Map</span>
                         </a>
                     </li>
                     <li>
+                        <a class="nav-link" ui-sref="site.search">
+                            <i class="fa fa-fw fa-file"></i>
+                            <span class="nav-link-text">Events</span>
+                        </a>
+                    </li>
+                    <li>
+                            <a class="nav-link" ui-sref="site.seatcheck.seatcheck">
+                                <i class="fa fa-fw fa-file"></i>
+                                <span class="nav-link-text">Car Share</span>
+                            </a>
+                        </li>
+                    <li>
                         <a class="nav-link" ui-sref="site.admin">
-                          <i class="fa fa-fw fa-file"></i>
-                          <span class="nav-link-text">Admin View</span>
+                            <i class="fa fa-fw fa-file"></i>
+                            <span class="nav-link-text">Admin View</span>
                         </a>
                     </li>
             </ul>
             <ul ng-hide="true" class="nav navbar-nav navbar-right home-pointer">
                 <li>
                     <a ng-click="navbarCtrl.logout()">
-              <span class="glyphicon glyphicon-log-in" ></span> PANIC!</a>
+                        <span class="glyphicon glyphicon-log-in"></span> PANIC!</a>
                 </li>
             </ul>
         </div>
