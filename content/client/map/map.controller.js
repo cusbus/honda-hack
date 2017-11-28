@@ -9,8 +9,16 @@
 
     function MapController() {
         var $ctrl = this;
-  
+
         var map;
+
+        $ctrl.transit = () => {
+            //Train routes
+            console.log('train button');
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+            //
+        }
 
         $ctrl.$onInit = () => {
             $ctrl.initalizeMap();
@@ -24,11 +32,10 @@
                 zoom: 13,
                 center: { lat: 34.041025, lng: -118.269642 }
             });
-
-            //Train routes
-            var transitLayer = new google.maps.TransitLayer();
-            transitLayer.setMap(map);
-            //
+            // //Train routes
+            // var transitLayer = new google.maps.TransitLayer();
+            // transitLayer.setMap(map);
+            // //
 
             //setting specific markers on map
             var marker1 = new google.maps.Marker({
