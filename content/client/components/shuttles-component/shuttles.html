@@ -1,0 +1,14 @@
+<div>
+    <form>
+        <label for="services" >Metro-Hubub Service Packages:</label>
+        <h4>Cost</h4>
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="Hubub Basic">Metro-Hubub Basic includes 7-day access to all Metro services.  This includes all Metro Rail, Bus, and Bike Share services. <br> Cost for {{$ctrl.hub}} Hubub Basic is {{$ctrl.rates.metroB}} <button ui-sref="site.payment" class='btn btn-standard'> Select</button></uib-tab>
+            <hr />
+            <uib-tab index="1" heading="Hubub Plus">Metro-Hubub Plus includes all Hubub Basic services in addition to reservered Hubub Charter Shuttles and access to local Hubub Micro-Shuttles. <br> Cost for {{$ctrl.hub}} Hubub Plus is {{$ctrl.rates.metroP}}<button ui-sref="site.payment" class='btn btn-standard'> Select</button></uib-tab>
+            <hr />
+            <uib-tab index="2" heading="Hubub SuperPlus">Metro-Hubub SuperPlus includes all Hubub Basic and Plus services in addition to extended-range Hub2Hub Micro Shuttles <br> Cost for {{$ctrl.hub}} Hubub SuperPlus is {{$ctrl.rates.metroSP}} <button ui-sref="site.payment" class='btn btn-standard'> Select</button></uib-tab>
+        </uib-tabset>
+        <pre>{{$ctrl.rates}}</pre>
+    </form>
+</div>
