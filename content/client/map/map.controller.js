@@ -16,15 +16,21 @@
         .module('client.map')
         .controller('mapController', MapController);
 
-    MapController.$inject = [];
+    MapController.$inject = ["toastr"];
 
-    function MapController() {
+    function MapController(toastr) {
         var vm = this;
 
         vm.initalizeMap = initalizeMap;
         vm.mapLayers = mapLayers;
         vm.toggleLayer = toggleLayer;
+<<<<<<< HEAD
         vm.toggleLayer2 = toggleLayer2;
+=======
+        vm.mapStyling = mapStyling;
+        vm.mapInfoWindow = mapInfoWindow;
+        vm.mapEventListeners = mapEventListeners;
+>>>>>>> origin
         vm.toggleActive = true;
         vm.toggleActive2 = true;
         var infowindow = new google.maps.InfoWindow();
@@ -37,6 +43,9 @@
         vm.$onInit = () => {
             vm.initalizeMap();
             vm.mapLayers();
+            vm.mapStyling();
+            vm.mapInfoWindow();
+            vm.mapEventListeners();
         }
 
 
@@ -97,15 +106,67 @@
         }
 
         vm.layer1 = new google.maps.TransitLayer();
+<<<<<<< HEAD
         vm.layer2 = new google.maps.Marker({
             position: myLatLng1,
             map: vm.map,
             title: 'Hub1'
         });
+=======
+        function mapLayers() {
+            vm.gcCities = 'client/map/Recreation_and_Parks_Facilities.geojson';
+            vm.map.data.loadGeoJson(vm.gcCities);
+>>>>>>> origin
 
         function mapLayers() {
             vm.layer1.setMap(vm.map);
             vm.layer2.setMap(vm.map);
+        }
+        function mapStyling() {
+            vm.map.data.setStyle({
+                fillColor: 'green',
+                strokeWeight: 1
+            });
+            //set color based on object property
+            // vm.map.data.setStyle(function (feature) {
+            //     var color = feature.getProperty('COLOR');
+            //     return {
+            //         fillColor: color,
+            //         strokeWeight: 1
+            //     }
+            // });
+        }
+
+        function mapInfoWindow() {
+            vm.map.data.addListener('click', function (event) {
+                var data = event.feature.f
+                vm.table = document.createElement("table");
+                for (var name in data) {
+                    var value = data[name];
+                    var tr = document.createElement('tr');
+                    var leftRow = document.createElement('td');
+                    leftRow.innerHTML = name;
+                    tr.appendChild(leftRow);
+                    var rightRow = document.createElement('td');
+                    rightRow.innerHTML = value;
+                    tr.appendChild(rightRow);
+                    vm.table.appendChild(tr);
+                }
+                infowindow.setContent(vm.table);
+                infowindow.setPosition(event.latLng);
+                infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -34) });
+                infowindow.open(vm.map);
+            });
+        }
+        function mapEventListeners() {
+            google.maps.event.addListener(vm.map, 'click', function () {
+                infowindow.close();
+            });
+            google.maps.event.addDomListener(window, "resize", function () {
+                var center = vm.map.getCenter();
+                google.maps.event.trigger(vm.map, "resize");
+                vm.map.setCenter(center);
+            });
         }
 
         function toggleLayer() {
