@@ -31,8 +31,14 @@
                     }
                 }
             })
-
-            
+            .state('site.hub-request', {
+                url: '/request-hub',
+                views: {
+                    'content@site': {
+                        component: 'hubRequest'
+                    }
+                }
+            })
     }
 
-})();
+})()
