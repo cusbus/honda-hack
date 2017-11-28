@@ -39,6 +39,16 @@
                     }
                 }
             })
+            .state('site.hub-confirmed', {
+                url: '/hub-confirmed',
+                views: {
+                    'content@site': {
+                        templateUrl: '/client/confirmation/hub-confrimation',
+                        controller: 'confirmationController as ctrl'
+                    }
+
+                }
+            })
     }
 
 })()

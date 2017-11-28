@@ -6,11 +6,19 @@
             controller: "requestController"
         })
 
-    angular.module('client.compoments')
+    angular.module('client.components')
         .controller('requestController', RequestController)
-    RequestController.$inject = ['toastr']
-    function RequestController(toastr) {
+    RequestController.$inject = ['toastr', '$state']
+    function RequestController(toastr, $state) {
         var vm = this
         vm.submit = _submit
+
+        function init() {
+
+        }
+        function _submit() {
+            toastr.success("Request Submitted")
+            $state.go('site.hub-confirmed')
+        }
     }
-})
+})()
