@@ -7,6 +7,7 @@
     MapController.$inject = ["toastr", "sendGridService"];
     function MapController(toastr, sendGridService) {
         var vm = this;
+        vm.total;
 
         vm.initalizeMap = initalizeMap;
         vm.mapLayers = mapLayers;
@@ -34,12 +35,6 @@
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: { lat: 34.041025, lng: -118.269642 }
-            });
-
-            var marker2 = new google.maps.Marker({
-                position: myLatLng2,
-                map: map,
-                title: 'Hub2'
             });
 
             //draggable routes
@@ -85,16 +80,11 @@
         }
 
         vm.layer1 = new google.maps.TransitLayer();
-        vm.layer2 = new google.maps.Marker({
-            position: myLatLng1,
-            map: map,
-            title: 'Hub1'
-        });
+        vm.layer2 =new google.maps.TrafficLayer();
         vm.layer3 = new google.maps.Data();
         vm.layer4 = new google.maps.Data();
         vm.layer5 = new google.maps.Data();
         vm.layer6 = new google.maps.Data();
-
 
         function mapLayers() {
             vm.geo1 = 'client/map/geojson/rec-parks.geojson';

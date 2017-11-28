@@ -334,6 +334,12 @@ video#bgvid {
     font-family: 'Roboto', 'sans-serif';
     line-height: 30px;
     padding-left: 10px;
+    background-color: transparent;
+    border: transparent;
+}
+
+.btn.disabled{
+    opacity: 1 !important;
 }
  
 /* .gm-style-iw {
