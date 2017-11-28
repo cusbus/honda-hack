@@ -18,6 +18,24 @@
                     }
                 }
             })
+            .state('site.hubs.hub-valley', {
+                url: '/hub-valley',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/hubs/hub-valley/hub-valley.html',
+                        controller: 'hubValleyController as valCtrl'
+                    }
+                }
+            })
+            .state('site.hubs.hub-ie', {
+                url: '/hub-ie',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/hubs/hub-ie/hub-ie.html',
+                        controller: 'hubInlandEmpireController as ieCtrl'
+                    }
+                }
+            })
             
     }
 
