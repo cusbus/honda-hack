@@ -378,3 +378,7 @@ video#bgvid {
 .hub-picture-resize {
     height: 350px;
 }
+
+.bg-white {
+    background-color: white;
+}
