@@ -14,12 +14,20 @@
                     }
                 }
             })
-            .state('site.home.confirmation', {
+            .state('site.confirmation', {
                 url: '/confirmation',
                 views: {
-                    'confirmation': {
+                    'content@site': {
                         templateUrl: 'client/confirmation/confirmation.html',
                         controller: 'confirmationController as ctrl'
+                    }
+                }
+            })
+            .state('site.payment', {
+                url: '/payment',
+                views: {
+                    'content@site': {
+                        component: 'paymentComponent'
                     }
                 }
             })

@@ -10,7 +10,7 @@
          
         init()
  
-        function _init() {
+        function init() {
             $log.log('confirmation landed')
         }
     }
