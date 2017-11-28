@@ -7,8 +7,8 @@
             controller: PaymentController
         })
 
-    PaymentController.$inject = ['$http', '$log']
-    function PaymentController($http, $log) {
+    PaymentController.$inject = ['$http', '$log',"toastr"]
+    function PaymentController($http, $log,toastr) {
         let $ctrl = this
         $ctrl.submit = _submit
 
@@ -31,7 +31,7 @@
                 state: $ctrl.state,
                 zip: $ctrl.zip
             }
-            alert('Success!!')
+            toastr.success('Success!!')
             $log.log(reservation)
             // shuttleService.submitPayment(reservation)
             //     .then(result => alert('Reservation Completed!'))

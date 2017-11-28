@@ -5,9 +5,9 @@
         .module('client.map')
         .controller('mapController', MapController);
 
-    MapController.$inject = [];
+    MapController.$inject = ["toastr"];
 
-    function MapController() {
+    function MapController(toastr) {
         var vm = this;
 
         vm.initalizeMap = initalizeMap;
