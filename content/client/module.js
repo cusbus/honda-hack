@@ -26,6 +26,7 @@
         'client.hub-oc',
         'client.hubs',
         "client.metrics",
+        "client.search",
         "client.seatcheck"
     ])
 
