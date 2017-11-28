@@ -44,7 +44,8 @@
         function getHOVLinks() {
             return $http.get('/api/get-HOV-links')
                 .then(_onSuccess)
-                .catch(_onError);
+                .catch(_onError)
+                ;
         };
 
         function getIncidents() {

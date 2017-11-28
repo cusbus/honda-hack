@@ -1,19 +1,22 @@
 (function () {
     'use strict'
-    angular.module('client.metrics')
-        .controller('metricsController', MetricsController);
+    angular.module('client.components')
+        .component('metricsComponent', {
+            templateUrl: '/client/components/metrics/metrics.html',
+            controller: MetricsController
+        });
 
     MetricsController.$inject = [];
 
     function MetricsController() {
         'use strict'
-        var vm = this;
-        vm.chartName = "Line Chart";
+        let $ctrl = this;
+        $ctrl.chartName = "Line Chart";
 
-        vm.changeChart = _changeChart;
+        $ctrl.changeChart = _changeChart;
 
-        vm.$onInit = () => {
-            vm.chartConfig = {
+        $ctrl.$onInit = () => {
+            $ctrl.chartConfig = {
                 chart: {
                     height: 500,
                     width: 800,
@@ -75,13 +78,13 @@
         };
 
         function _changeChart() {
-            if (vm.chartName == "Line Chart") {
-                vm.chartConfig.chart.type = "line";
-                vm.chartName = "Column Chart";
+            if ($ctrl.chartName == "Line Chart") {
+                $ctrl.chartConfig.chart.type = "line";
+                $ctrl.chartName = "Column Chart";
             }
             else {
-                vm.chartConfig.chart.type = "column";
-                vm.chartName = "Line Chart";
+                $ctrl.chartConfig.chart.type = "column";
+                $ctrl.chartName = "Line Chart";
             }
         }
     }
