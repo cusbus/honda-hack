@@ -4,9 +4,9 @@
     angular.module('client.site')
         .controller('hubOcController', HubOcController)
 
-    HubLaController.$inject = ['$log']
+    HubOcController.$inject = ['$log']
 
-    function HubLaController($log) {
+    function HubOcController($log) {
         var vm = this
 
         init()
