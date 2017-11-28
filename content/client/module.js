@@ -18,7 +18,8 @@
 
         //views /controllers
         'client.crud',
-        'client.hackers'
+        'client.hackers',
+        'client.home'
     ])
 
     angular.module('client')
@@ -38,7 +39,7 @@
     ];
 
     function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/honda-hack/index');
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
     }
 })();

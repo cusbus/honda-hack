@@ -9,7 +9,7 @@ const router = require('./app/routes')
 dotenv.config()
 
 // set our port
-const port = process.env.PORT || 80
+const port = process.env.PORT || 8080
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
