@@ -1,19 +1,18 @@
-/* global angular */
 (function() {
     'use strict';
 
-    angular.module('client.layout', ['ui.router'])
+    angular.module('client.map', ['ui.router'])
             .config(RouteConfig);
 
     RouteConfig.$inject = ['$stateProvider']
 
     function RouteConfig($stateProvider) {
         $stateProvider
-            .state('site', {
-                abstract: true,
+            .state('site.map', {
+                url: '/map',
                 views: {
-                    root: {
-                        templateUrl: 'client/layout/layout.tpl.html'
+                    'content@site': {
+                        templateUrl: 'client/map/map.html'
                     }
                 }
             })

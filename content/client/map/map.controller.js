@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module(APP.NAME)
+        .module('client.map')
         .component('mapDetails',{
             templateUrl: '/app/content/client/sites/mapDetails.html' ,
             controller: 'mapController'
@@ -13,10 +13,10 @@
     'use strict';
 
     angular
-        .module(APP.NAME)
+        .module('client.map')
         .controller('mapController', MapController);
 
-    MapController.$inject('$scope');
+    MapController.$inject=['$scope'];
 
     function MapController($scope){
         var vm = this;
