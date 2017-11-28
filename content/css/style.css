@@ -228,3 +228,30 @@ p {
 .bordered {
     border: 1px solid lightgrey;
 }
+
+.panel-class {
+    background-color: #175676;
+    color: white;
+}
+
+.panel-body {
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+* {
+    box-sizing:border-box;
+  }
+  
+  video {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
