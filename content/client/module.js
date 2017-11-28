@@ -7,12 +7,9 @@
         // 3rd party
         'ui.router',
         'ui.bootstrap',
-<<<<<<< HEAD
         "highcharts-ng",
-=======
         'toastr',
->>>>>>> origin/master
-
+        
         //base / common
         'client.layout',
         'client._common',
