@@ -14,6 +14,15 @@
                     }
                 }
             })
+            .state('site.home.confirmation', {
+                url: '/confirmation',
+                views: {
+                    'confirmation': {
+                        templateUrl: 'client/confirmation/confirmation.html',
+                        controller: 'confirmationController as ctrl'
+                    }
+                }
+            })
 
             
     }
