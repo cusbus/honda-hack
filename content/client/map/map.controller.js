@@ -1,3 +1,14 @@
+(function (){
+    'use strict';
+
+    angular
+        .module('client.map')
+        .component('map', {
+            templateUrl: 'client/map/map.html' ,
+            controller: 'mapController'
+        });
+})();
+
 (function () {
     'use strict';
 
@@ -13,9 +24,15 @@
         vm.initalizeMap = initalizeMap;
         vm.mapLayers = mapLayers;
         vm.toggleLayer = toggleLayer;
+        vm.toggleLayer2 = toggleLayer2;
         vm.toggleActive = true;
+        vm.toggleActive2 = true;
         var infowindow = new google.maps.InfoWindow();
         var map;
+
+        var myLatLng1 = { lat: 34.0562, lng: -118.2365 };
+        var myLatLng2 = { lat: 34.0739, lng: -118.2400 };
+
 
         vm.$onInit = () => {
             vm.initalizeMap();
@@ -24,19 +41,10 @@
 
 
         function initalizeMap() {
-            var myLatLng1 = { lat: 34.0562, lng: -118.2365 };
-            var myLatLng2 = { lat: 34.0739, lng: -118.2400 };
-
+          
             vm.map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: { lat: 34.041025, lng: -118.269642 }
-            });
-
-            //setting specific markers on map
-            var marker1 = new google.maps.Marker({
-                position: myLatLng1,
-                map: vm.map,
-                title: 'Hub1'
             });
 
             var marker2 = new google.maps.Marker({
@@ -89,11 +97,15 @@
         }
 
         vm.layer1 = new google.maps.TransitLayer();
-        function mapLayers() {
-            // vm.gcCities = '../public-unrestricted/modules/home/list/geojson/gc_cities_communities.json';
-            // map.data.loadGeoJson(vm.gcCities);
+        vm.layer2 = new google.maps.Marker({
+            position: myLatLng1,
+            map: vm.map,
+            title: 'Hub1'
+        });
 
+        function mapLayers() {
             vm.layer1.setMap(vm.map);
+            vm.layer2.setMap(vm.map);
         }
 
         function toggleLayer() {
@@ -110,6 +122,20 @@
                 vm.toggleActive = true;
             }
         }
-    }
 
+         function toggleLayer2() {
+            if (vm.toggleActive2===true) {
+                console.log("true")
+                console.log(vm.toggleActive2)
+                vm.layer2.setMap(null);
+                vm.toggleActive2 = false;
+            }
+            else {
+                console.log("false")
+                console.log(vm.toggleActive2)
+                vm.layer2.setMap(vm.map);
+                vm.toggleActive2 = true;
+            }
+        }
+    }
 })();
