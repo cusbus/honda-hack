@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('client.hubs')
@@ -8,6 +8,12 @@
 
     function HubValleyController($log, $window) {
         var vm = this
+        vm.hub = "San Fernando Valley"
+        vm.rates = {
+            metroB: '175.95',
+            metroP: '225.95',
+            metroSP: '265.95'
+        }
 
         init()
 
