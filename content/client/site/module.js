@@ -12,7 +12,10 @@
         $stateProvider
             .state('site.home', {
                 url: '/home',
-                abstract: true
+                views: {
+                    templateUrl: 'client/site/home/home.html',
+                    controller: 'homeController as hCtrl'
+                }
             })
             .state('site.hub.la', {
                 url: '/hub-la',
