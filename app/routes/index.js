@@ -1,6 +1,19 @@
 const router = require('express').Router()
 const hackersRoutes = require('./hackers.routes')
+const getMainLines = require('./get-main-lines.routes')
+const getHOVRoutes = require('./get-HOV-routes.routes')
+const getMainLineLinks = require('./get-main-line-links.routes')
+const getHOVLinks = require('./get-HOV-links.routes')
+const getIncidents = require('./get-incidents.routes')
+const getRoadWorks = require('./get-road-works.routes')
+const getRoadConditions = require('./get-road-conditions.routes')
+const getRoadWays = require('./get-road-ways.routes')
+const getMessageSigns = require('./get-message-signs.routes')
+const getTransitProviders = require('./get-transit-providers.routes')
+const getParkRideLots = require('./get-park-ride-lots.routes')
 const clientRoutes = require('./client.routes')
+
+// authentication
 const authenticate = require('../filters/authenticate')
 
 module.exports = router
@@ -10,6 +23,18 @@ router.use(authenticate)
 
 // API routes (group routing modules here - no empty lines between)
 router.use('/api/hackers', hackersRoutes)
+router.use('/api/get-main-line', getMainLines)
+router.use('/api/get-HOV-routes', getHOVRoutes)
+router.use('/api/get-main-line-links', getMainLineLinks)
+router.use('/api/get-HOV-links', getHOVLinks)
+router.use('/api/get-incidents', getIncidents)
+router.use('/api/get-road-works', getRoadWorks)
+router.use('/api/get-road-conditions', getRoadConditions)
+router.use('/api/get-road-ways', getRoadWays)
+router.use('/api/get-message-signs', getMessageSigns)
+router.use('/api/get-transit-providers', getTransitProviders)
+router.use('/api/get-park-ride-lots', getParkRideLots)
+
 // router.use('/api/entities', entitiesRoutes)
 // router.use('/api/examples', examplesRoutes)
 

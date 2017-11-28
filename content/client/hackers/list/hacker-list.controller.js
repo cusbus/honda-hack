@@ -5,9 +5,9 @@
     angular.module('client.hackers')
         .controller('hackerListController', HackerListController)
 
-    HackerListController.$inject = ['hackerService', 'hackers', '$log']
+    HackerListController.$inject = ['hackerService', 'hackers', '$log', 'thirdPartyApiServices']
 
-    function HackerListController(hackerService, hackers, $log) {
+    function HackerListController(hackerService, hackers, $log, thirdPartyApiServices) {
         var vm = this
 
         vm.tagline = null
@@ -23,6 +23,13 @@
             vm.formData = {}
             vm.hackers = hackers
             vm.tagline = 'Hack The Planet!'
+            thirdPartyApiServices.getMainLineRoutes()
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
 
         function _create() {
