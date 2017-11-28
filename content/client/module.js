@@ -18,7 +18,11 @@
 
         //views /controllers
         'client.crud',
-        'client.hackers'
+        'client.hackers',
+        'client.home',
+        'client.components',
+        'client.map',
+        'client.hubs'
     ])
 
     angular.module('client')
@@ -38,7 +42,7 @@
     ];
 
     function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/hackers/list');
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
     }
 })();

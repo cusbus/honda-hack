@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.4.2",
+    "bower": "^1.8.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^2.0.0",
@@ -20,8 +21,7 @@
     "joi": "^11.1.1",
     "joi-objectid": "^2.0.0",
     "mongodb": "^2.2.31",
-    "node-uuid": "^1.4.7",
-    "request": "^2.83.0"
+    "node-uuid": "^1.4.7"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",

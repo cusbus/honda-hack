@@ -16,6 +16,11 @@
                     root: {
                         templateUrl: 'client/layout/layout.tpl.html'
                     }
+                    ,
+                    'navbar@site': {
+                        templateUrl: 'client/layout/navbar/navbar.html',
+                        controller: 'navbarController as navbarCtrl',
+                    }
                 }
             })
     }
