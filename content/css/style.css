@@ -255,3 +255,12 @@ p {
     object-fit:cover;
     object-position:center;
   }
+  
+.site-body{
+    margin-top:5em;
+}
+
+.layer-toggle-margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}

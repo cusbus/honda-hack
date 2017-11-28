@@ -7,31 +7,24 @@
             controller: PaymentController
         })
 
-    PaymentController.$inject = ['$http', '$log', '$state']
-    function PaymentController($http, $log, $state) {
+    PaymentController.$inject = ['$http', '$log', '$alert', 'shuttleService']
+
+    function PaymentController($http, $log, $alert, shuttleService) {
         let $ctrl = this
         $ctrl.submit = _submit
-
-        $ctrl.name = 'Joe Tourist'
-        $ctrl.cardNumber = '****-****-****-9090'
-        // $ctrl.cardSecCode = '900'
-        $ctrl.addressA = '1034 Traveling St'
-        $ctrl.city = 'Topeka'
-        $ctrl.state = 'KS'
-        $ctrl.zip = '66605'        
 
         init()
 
         function init() {
-            $log.log('payment component landed')
+            $log.log('payment landed')
         }
 
         function _submit() {
             let reservation = {
-                name: $ctrl.cardName,
+                name: $ctrl.name,
                 cardType: $ctrl.cardType,
                 cardNumber: $ctrl.cardNumber,
-                cardExpiration: $ctrl.cardExpirationMonth+"|"+$ctrl.cardExpirationYear,
+                cardExpiration: $ctrl.cardExpirationMonth + $ctrl.cardExpirationYear,
                 cardSecCode: $ctrl.cardSecCode,
                 addressA: $ctrl.addressA,
                 addressB: $ctrl.addressB,
@@ -39,11 +32,11 @@
                 state: $ctrl.state,
                 zip: $ctrl.zip
             }
-            alert('Success!!')
-            $log.log(reservation)
-            $state.go('site.confirmation')
+            $alert(reservation)
             // shuttleService.submitPayment(reservation)
-            //     .then(result => alert('Reservation Completed!'))
+            //     .then(result => $alert('Reservation Completed!'))
         }
+
     }
+
 })()
