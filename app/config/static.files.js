@@ -7,14 +7,14 @@ module.exports = app
 
 // static files ==============================================
 app.use(
-    "/",
+    "/content",
     express.static(path.join(__dirname, "../../content"), {
         fallthrough: false
     })
 );
 
 app.use(
-    "/client/build",
+    "/content/build",
     express.static(path.join(__dirname, "../../content/client/build"), {
         fallthrough: false
     })
