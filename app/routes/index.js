@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const hackersRoutes = require('./hackers.routes')
 const getMainLines = require('./get-main-lines.routes')
 const getHOVRoutes = require('./get-HOV-routes.routes')
 const getMainLineLinks = require('./get-main-line-links.routes')
@@ -22,7 +21,6 @@ module.exports = router
 router.use(authenticate)
 router.use(require('../config/static.files'))
 // API routes (group routing modules here - no empty lines between)
-router.use('/api/hackers', hackersRoutes)
 router.use('/api/get-main-line', getMainLines)
 router.use('/api/get-HOV-routes', getHOVRoutes)
 router.use('/api/get-main-line-links', getMainLineLinks)

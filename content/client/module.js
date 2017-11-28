@@ -20,14 +20,14 @@
 
         //views /controllers
         'client.crud',
-        'client.hackers',
         'client.home',
         'client.components',
         'client.map',
         'client.hub-oc',
         'client.hubs',
         "client.metrics",
-        "client.seatcheck"
+        "client.seatcheck",
+        "client.events"
     ])
 
     angular.module('client')
