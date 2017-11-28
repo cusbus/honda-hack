@@ -11,7 +11,16 @@
 
         return {
             getMainLineRoutes: getMainLineRoutes,
-            getHOVRoutes: getHOVRoutes
+            getHOVRoutes: getHOVRoutes,
+            getMainLineLinks: getMainLineLinks,
+            getHOVLinks: getHOVLinks,
+            getIncidents: getIncidents,
+            getRoadWorks: getRoadWorks,
+            getRoadConditions: getRoadConditions,
+            getRoadWays: getRoadWays,
+            getMessageSigns: getMessageSigns,
+            getTransitProviders: getTransitProviders,
+            getParkRideLots: getParkRideLots
         }
 
         function getMainLineRoutes() {
@@ -74,7 +83,7 @@
                 .catch(_onError);
         };
 
-        function getMainLineRoutes() {
+        function getParkRideLots() {
             return $http.get('/api/get-park-ride-lots')
                 .then(_onSuccess)
                 .catch(_onError);
