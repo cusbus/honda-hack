@@ -1,14 +1,15 @@
 (function() {
     'use strict';
     angular.module('client.home')
-        .controller('seatController', SeatController)
+        .controller('seatController', SeatController,)
     
-        SeatController.$inject = []
+        SeatController.$inject = ['sdkService', '$log']
 
-    function SeatController() {
+    function SeatController(sdkService, $log) {
         var vm = this;
         vm.seatCheck = _seatCheck
         vm.loadSeats = _loadSeats
+
         vm.isFirst = 0;
         function _seatCheck(){
             if (vm.isFirst == 0){
@@ -40,6 +41,11 @@
             vm.isFirst = s;
             _seatCheck();
             return s;
+        }
+
+        function _readAll() {
+            sdkService.readAll()
+                .then(result => $log.log(result))
         }
     }
 

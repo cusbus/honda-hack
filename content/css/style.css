@@ -424,3 +424,6 @@ div#overlay-under {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+.home-pointer:hover { 
+    cursor: pointer;
+}
