@@ -14,6 +14,15 @@
                     }
                 }
             })
+            .state('site.hub-la', {
+                url: '/hub-la',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/s/hub-la/hub-la.html',
+                        controller: 'hubLaController as laCtrl'
+                    }
+                }
+            })
     }
 
 })();
