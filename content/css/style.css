@@ -40,6 +40,7 @@
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {
     color: #ecf0f1;
+    margin-left: 10px;
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
