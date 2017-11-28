@@ -20,7 +20,6 @@
 
         //views /controllers
         'client.crud',
-        'client.hackers',
         'client.home',
         'client.components',
         'client.map',
