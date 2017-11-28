@@ -13,7 +13,7 @@
                 views: {
                     'content@site': {
                         templateUrl: 'client/components/hub-oc/hub-oc.html',
-                        controller:'hubOcController'
+                        controller:'hubOcController as ocCtrl'
                     }
                 }
             })
