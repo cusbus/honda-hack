@@ -27,6 +27,15 @@
                     }
                 }
             })
+            .state('site.hubs.hub-ie', {
+                url: '/hub-ie',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/hubs/hub-ie/hub-ie.html',
+                        controller: 'hubInlandEmpireController as ieCtrl'
+                    }
+                }
+            })
             
     }
 
