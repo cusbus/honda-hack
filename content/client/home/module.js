@@ -49,5 +49,14 @@
 
                 }
             })
+            .state('site.admin', {
+                url: '/admin',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/home/admin/admin.html',
+                        controller: 'adminController as adCtrl'
+                    }
+                }
+            })
     }
 })()
