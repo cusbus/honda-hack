@@ -7,15 +7,16 @@
             controller: PaymentController
         })
 
-    PaymentController.$inject = ['$http', '$log']
-    function PaymentController($http, $log) {
+    PaymentController.$inject = ['$http', '$log', '$alert', 'shuttleService']
+
+    function PaymentController($http, $log, $alert, shuttleService) {
         let $ctrl = this
         $ctrl.submit = _submit
 
         init()
 
         function init() {
-            $log.log('payment component landed')
+            $log.log('payment landed')
         }
 
         function _submit() {
@@ -23,7 +24,7 @@
                 name: $ctrl.name,
                 cardType: $ctrl.cardType,
                 cardNumber: $ctrl.cardNumber,
-                cardExpiration: $ctrl.cardExpirationMonth+"|"+$ctrl.cardExpirationYear,
+                cardExpiration: $ctrl.cardExpirationMonth + $ctrl.cardExpirationYear,
                 cardSecCode: $ctrl.cardSecCode,
                 addressA: $ctrl.addressA,
                 addressB: $ctrl.addressB,
@@ -31,10 +32,11 @@
                 state: $ctrl.state,
                 zip: $ctrl.zip
             }
-            alert('Success!!')
-            $log.log(reservation)
+            $alert(reservation)
             // shuttleService.submitPayment(reservation)
-            //     .then(result => alert('Reservation Completed!'))
+            //     .then(result => $alert('Reservation Completed!'))
         }
+
     }
+
 })()

@@ -13,7 +13,7 @@
                 views: {
                     'content@site': {
                         templateUrl: 'client/map/map.html',
-                        controller:'mapController'
+                        controller:'mapController as mapCtrl'
                     }
                 }
             })
