@@ -2,7 +2,7 @@
     "use strict";
     angular.module("client.components")
         .component("testComponent", {
-            templateUrl: "/content/client/components/testcomponent/test.component.html",
+            templateUrl: "/client/components/test-component/test.component.html",
             controller: TestComponentController
         });
 
