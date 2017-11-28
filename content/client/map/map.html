@@ -1,1 +1,16 @@
-<div style="width:100%; height:600px;" id="map"></div>
+<div class='google-map-container'>
+    <div class="col-sm-10">
+        <div class='row'>
+            <div style="height:800px; width:100%" id="map"></div>
+            <p id="total"></p>
+        </div>
+    </div>
+    <div class='col-sm-2 hidden-xs'>
+        <div class='row'>
+            <div class="layer-toggle-margin">
+                <h3 class='text-center'>Toggle Map Layers</h3>
+            </div>
+            <button type="button" class="btn btn-primary toggle no-shadow btn-block" ng-click="mapCtrl.toggleLayer()">BUTTON</button>
+        </div>
+    </div>
+</div>
