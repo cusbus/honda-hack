@@ -20,7 +20,8 @@
         'client.crud',
         'client.hackers',
         'client.home',
-        'client.components'
+        'client.components',
+        'client.map'
     ])
 
     angular.module('client')
