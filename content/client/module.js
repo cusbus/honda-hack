@@ -7,6 +7,7 @@
         // 3rd party
         'ui.router',
         'ui.bootstrap',
+        'toastr',
 
         //base / common
         'client.layout',
