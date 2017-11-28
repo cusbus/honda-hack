@@ -22,7 +22,8 @@
         'client.home',
         'client.components',
         'client.map',
-        'client.hub-oc'
+        'client.hub-oc',
+        'client.hubs'
     ])
 
     angular.module('client')
