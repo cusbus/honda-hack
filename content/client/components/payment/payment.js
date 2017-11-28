@@ -12,6 +12,14 @@
         let $ctrl = this
         $ctrl.submit = _submit
 
+        $ctrl.name = 'Joe Tourist'
+        $ctrl.cardNumber = '****-****-****-9090'
+        // $ctrl.cardSecCode = '900'
+        $ctrl.addressA = '1034 Traveling St'
+        $ctrl.city = 'Topeka'
+        $ctrl.state = 'KS'
+        $ctrl.zip = '66605'        
+
         init()
 
         function init() {
@@ -20,7 +28,7 @@
 
         function _submit() {
             let reservation = {
-                name: $ctrl.name,
+                name: $ctrl.cardName,
                 cardType: $ctrl.cardType,
                 cardNumber: $ctrl.cardNumber,
                 cardExpiration: $ctrl.cardExpirationMonth+"|"+$ctrl.cardExpirationYear,
@@ -33,6 +41,7 @@
             }
             toastr.success('Success!!')
             $log.log(reservation)
+            $state.go('site.confirmation')
             // shuttleService.submitPayment(reservation)
             //     .then(result => alert('Reservation Completed!'))
         }
