@@ -1,10 +1,9 @@
 /* global angular */
 (function() {
-    'use strict'
+    'use strict';
 
     angular.module('client.layout', ['ui.router'])
-
-    angular.module('client.layout').config(RouteConfig)
+            .config(RouteConfig);
 
     RouteConfig.$inject = ['$stateProvider']
 

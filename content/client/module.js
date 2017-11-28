@@ -19,7 +19,8 @@
         //views /controllers
         'client.crud',
         'client.hackers',
-        'client.home'
+        'client.home',
+        'client.map'
     ])
 
     angular.module('client')
