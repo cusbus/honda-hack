@@ -8,9 +8,21 @@
         this fantastic destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for
         somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
 
-    <h3>What's the Hubbub?</h3>
-    <!-- ******************************** MAP GOES HERE **************************************** -->
+    <div class="container">
+        <div class="row">
+            <h3>What's the Hubbub?</h3>
+            <div class='col-md-4'>
+                <map-component></map-component>
+            </div>
+            <div class="col-md-6">
+                <metrics-component></metrics-component>
+            </div>
+        </div>
 
+    </div>
+    <div>
+        <shuttles-component rates="laCtrl.rates" hub="laCtrl.hub"></shuttles-component>
+    </div>
     <h3>Local Activities</h3>
     <uib-accordion>
         <div uib-accordion-group class="panel-class" is-open="status.isOpen">
@@ -68,7 +80,4 @@
             <a href="http://www.chargers.com/">- Los Chargers</a>
         </div>
     </uib-accordion>
-    <div>
-        <shuttles-component rates="laCtrl.rates" hub="laCtrl.hub"></shuttles-component>
-    </div>
 </div>

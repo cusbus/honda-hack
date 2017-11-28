@@ -15,8 +15,8 @@
         vm.$onInit = () => {
             vm.chartConfig = {
                 chart: {
-                    height: 500,
-                    width: 800,
+                    height: 100,
+                    width: 100,
                     reflow: true,
                     type: "column",
                     plotBorderColor: '#346691',

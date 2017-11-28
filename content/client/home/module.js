@@ -31,6 +31,24 @@
                     }
                 }
             })
+            .state('site.hub-request', {
+                url: '/request-hub',
+                views: {
+                    'content@site': {
+                        component: 'hubRequest'
+                    }
+                }
+            })
+            .state('site.hub-confirmed', {
+                url: '/hub-confirmed',
+                views: {
+                    'content@site': {
+                        templateUrl: '/client/confirmation/hub-confirmation.html',
+                        controller: 'confirmationController as ctrl'
+                    }
+
+                }
+            })
             .state('site.admin', {
                 url: '/admin',
                 views: {
@@ -40,9 +58,5 @@
                     }
                 }
             })
-            
-
-
     }
-
-})();
+})()

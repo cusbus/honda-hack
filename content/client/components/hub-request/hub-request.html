@@ -1,0 +1,37 @@
+<div class="container col-md-10">
+    <form>
+        <div class="col-md-6">
+            <div class="form-group">
+                <h2>Request a community Hub</h2>
+            </div>
+            <div class="form-group">
+                <label for="name">Requester Name:</label>
+                <input type="" ng-model="$ctrl.name" name="name" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">Community Name:</label>
+                <input name="neighborhood" ng-model="$ctrl.communityName" class="form-control" placeholder="Community Name">
+            </div>
+            <div class="form-group">
+                <div class="container">
+                    <label for="border">Hub radius:</label>
+                    <map-component></map-component>
+                </div>
+            </div>
+            <div class="form-group">
+                <div    >  <label for="date">Event dates:</label></div>
+                <div class="col-md-4">
+                  
+                    <input type="date" name="date" ng-model="$ctrl.date" class="form-control">
+                </div>
+                <div class="col-md-1">to</div>
+                <div class="col-md-4">
+                    <input type="date" name="date2" ng-model="$ctrl.date2" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <button ng-click="$ctrl.submit()" class="btn bg-blue white pull-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
