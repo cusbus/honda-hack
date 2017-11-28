@@ -39,7 +39,6 @@
                     }
                 }
             })
-<<<<<<< HEAD
             .state('site.hub-confirmed', {
                 url: '/hub-confirmed',
                 views: {
@@ -50,8 +49,6 @@
 
                 }
             })
-=======
->>>>>>> master
             .state('site.admin', {
                 url: '/admin',
                 views: {
@@ -61,10 +58,5 @@
                     }
                 }
             })
-<<<<<<< HEAD
     }
-=======
-      }
->>>>>>> master
 })()
- 
