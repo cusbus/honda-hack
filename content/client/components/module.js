@@ -1,4 +1,4 @@
 (function () {
     'use strict';
-    angular.module('client.components', []);
+    angular.module('client.components', ['highcharts-ng']);
 })();

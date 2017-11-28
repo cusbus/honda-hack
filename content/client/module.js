@@ -9,7 +9,7 @@
         'ui.bootstrap',
         "highcharts-ng",
         'toastr',
-        
+
         //base / common
         'client.layout',
         'client._common',
@@ -26,8 +26,7 @@
         'client.hub-oc',
         'client.hubs',
         "client.metrics",
-        "client.seatcheck",
-        "client.events"
+        "client.seatcheck"
     ])
 
     angular.module('client')
