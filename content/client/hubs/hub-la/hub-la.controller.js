@@ -4,9 +4,9 @@
     angular.module('client.hubs')
         .controller('hubLaController', HubLaController)
 
-    HubLaController.$inject = ['$log']
+    HubLaController.$inject = ['$log', '$window']
 
-    function HubLaController($log) {
+    function HubLaController($log, $window) {
         var vm = this
 
         init()
@@ -19,8 +19,7 @@
 
 
         function init() {
-
-
+            $window.scrollTo(0, 0);
         }
     }
 })();
