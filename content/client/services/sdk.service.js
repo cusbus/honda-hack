@@ -6,7 +6,7 @@
 
     function SdkService($http){
 
-        let sdkKey = 'feb53440-1740-44fa-b629-dc41f2290ce0'
+        let sdkKey = '8da14a60-256c-4aad-9467-791d7795686d'
         
         return { 
             readAll: _readAll
