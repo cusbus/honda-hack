@@ -16,6 +16,7 @@ angular.module('client.crud').component('hubOc',{
         vm.$onInit = _init
  
         function _init() {
+            console.log("hub oc init")
         }
     }
 })()

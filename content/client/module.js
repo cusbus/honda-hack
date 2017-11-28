@@ -21,7 +21,8 @@
         'client.hackers',
         'client.home',
         'client.components',
-        'client.map'
+        'client.map',
+        'client.hub-oc'
     ])
 
     angular.module('client')
