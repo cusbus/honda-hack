@@ -13,12 +13,4 @@ app.use(
     })
 );
 
-app.use(
-    "/content/build",
-    express.static(path.join(__dirname, "../../content/client/build"), {
-        fallthrough: false
-    })
-);
-
-
 
