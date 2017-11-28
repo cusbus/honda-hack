@@ -5,7 +5,8 @@
             "bootstrap",
             "angular",
             "angular-ui-router",
-            "angular-bootstrap"
+            "angular-bootstrap",
+            "toastr"
         ]
     },
     "paths": {
@@ -13,6 +14,7 @@
         "bootstrap": "content/libs/bootstrap/dist/js/bootstrap.min.js",
         "angular": "content/libs/angular/angular.min.js",
         "angular-ui-router": "content/libs/angular-ui-router/release/angular-ui-router.min.js",
-        "angular-bootstrap": "content/libs/angular-bootstrap/ui-bootstrap-tpls.min.js"
+        "angular-bootstrap": "content/libs/angular-bootstrap/ui-bootstrap-tpls.min.js",
+        "toastr":"content/libs/angular-toastr/dist/angular-toastr.tpls.min.js"
     }
 }
