@@ -4,22 +4,20 @@
         <img class="hub-picture-resize" src="\content\css\images\sanFernandoValley.jpg"></img>
     </div>
 
-    <p style="margin-top:25px; margin-bottom:25px;">California is a dream destination for many and with endless sunshine, a local, luxury lifestyle and an abundance of things
-        to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and
-        this fantastic destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for
-        somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
+    <p style="margin-top:25px; margin-bottom:25px;">California is a dream destination for many and with endless sunshine, a local, luxury lifestyle and an abundance of things to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and this fantastic
+        destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
 
     <h3>What's the Hubub?</h3>
     <!-- ******************************** MAP GOES HERE **************************************** -->
-    
+
     <!-- <div>Available Routes</div>  -->
 
     <h3>Local Activities</h3>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    San Fernando Valley Activities
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Activities
                 </div>
             </uib-accordion-heading>
             <a href="https://www.wbstudiotour.com/">- Warner Bros Studio Tour</a>
@@ -34,10 +32,10 @@
         </div>
     </uib-accordion>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    San Fernando Valley Shopping
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Shopping
                 </div>
             </uib-accordion-heading>
             <a href="http://www.shermanoaksgalleria.com/">- Sherman Oaks Galleria</a>
@@ -48,7 +46,18 @@
         </div>
     </uib-accordion>
 
+<<<<<<< HEAD
 <div>
     <h3>Hubub Metro Services</h3>
     <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
 </div>
+=======
+    <h4>Cost</h4>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Metro Basic">Metro basic includes....</uib-tab>
+        <uib-tab index="1" heading="Metro Plus">Metro plus includes....</uib-tab>
+        <uib-tab index="2" heading="Super Metro Plus">Super metro plus includes....</uib-tab>
+        <hr />
+    </uib-tabset>
+</div>
+>>>>>>> master
