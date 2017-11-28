@@ -1,4 +1,3 @@
-/* global angular */
 (function() {
     'use strict'
 
@@ -8,11 +7,12 @@
 
     function RouteConfig($stateProvider) {
         $stateProvider
-            .state('site', {
-                abstract: true,
+            .state('site.hub.oc', {
+                url: '/hub-oc',
                 views: {
-                    root: {
-                        templateUrl: 'client/layout/layout.tpl.html'
+                    'content@site': {
+                        templateUrl: 'client/site/hub-oc/hub-oc.html',
+                        controller: 'hubOcController as ocCtrl'
                     }
                 }
             })
