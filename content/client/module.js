@@ -24,6 +24,7 @@
         'client.home',
         'client.components',
         'client.map',
+        'client.hub-oc',
         'client.hubs',
         "client.metrics"
     ])
