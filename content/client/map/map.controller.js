@@ -1,13 +1,10 @@
 (function () {
     'use strict';
-
     angular
         .module('client.map')
         .controller('mapController', MapController);
-
-    MapController.$inject = ["toastr"];
-
-    function MapController(toastr) {
+    MapController.$inject = ["toastr", "sendGridService"];
+    function MapController(toastr, sendGridService) {
         var vm = this;
 
         vm.initalizeMap = initalizeMap;
@@ -16,6 +13,7 @@
         vm.mapStyling = mapStyling;
         vm.mapInfoWindow = mapInfoWindow;
         vm.mapEventListeners = mapEventListeners;
+        vm.sendmail = sendmail;
         vm.toggleActive = true;
         var infowindow = new google.maps.InfoWindow();
         var map;
@@ -150,7 +148,7 @@
         }
 
         function toggleLayer() {
-            if (vm.toggleActive===true) {
+            if (vm.toggleActive === true) {
                 console.log("true")
                 console.log(vm.toggleActive)
                 vm.layer1.setMap(null);
@@ -162,6 +160,21 @@
                 vm.layer1.setMap(vm.map);
                 vm.toggleActive = true;
             }
+        }
+
+        function sendmail() {
+            console.log("hello")
+            sendGridService.sendmail()
+                .then(sendSuccess)
+                .catch(sendError);
+        }
+
+        function sendSuccess(response) {
+            console.log(response)
+        }
+
+        function sendError(response) {
+            console.log(response)
         }
     }
 
