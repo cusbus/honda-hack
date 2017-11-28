@@ -13,12 +13,13 @@ app.use(
     })
 );
 
-app.use(
-    "/content/build",
-    express.static(path.join(__dirname, "../../content/client/build"), {
-        fallthrough: false
-    })
-);
+//doesn't look like we need this?
+// app.use(
+//     "/content/build",
+//     express.static(path.join(__dirname, "../../content/build"), {
+//         fallthrough: false
+//     })
+// );
 
 
 
