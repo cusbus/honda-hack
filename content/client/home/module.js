@@ -43,7 +43,7 @@
                 url: '/hub-confirmed',
                 views: {
                     'content@site': {
-                        templateUrl: '/client/confirmation/hub-confrimation',
+                        templateUrl: '/client/confirmation/hub-confirmation.html',
                         controller: 'confirmationController as ctrl'
                     }
 
