@@ -5,7 +5,9 @@
             "bootstrap",
             "angular",
             "angular-ui-router",
-            "angular-bootstrap"
+            "angular-bootstrap",
+            "highcharts",
+            "highcharts-ng"
         ]
     },
     "paths": {
@@ -13,6 +15,8 @@
         "bootstrap": "content/libs/bootstrap/dist/js/bootstrap.min.js",
         "angular": "content/libs/angular/angular.min.js",
         "angular-ui-router": "content/libs/angular-ui-router/release/angular-ui-router.min.js",
-        "angular-bootstrap": "content/libs/angular-bootstrap/ui-bootstrap-tpls.min.js"
+        "angular-bootstrap": "content/libs/angular-bootstrap/ui-bootstrap-tpls.min.js",
+        "highcharts": "content/libs/highcharts/highcharts.js",
+        "highcharts-ng": "content/libs/highcharts-ng/dist/highcharts-ng.min.js"
     }
 }
