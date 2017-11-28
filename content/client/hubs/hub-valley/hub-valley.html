@@ -1,6 +1,6 @@
 <div class="container">
     <div class="text-center">
-        <h1>Welcome to San Fernando Valley Hub</h1>
+        <h1>San Fernando Valley Hub</h1>
         <img class="hub-picture-resize" src="\content\css\images\sanFernandoValley.jpg"></img>
     </div>
 
@@ -11,15 +11,15 @@
 
     <h3>What's the Hubub?</h3>
     <!-- ******************************** MAP GOES HERE **************************************** -->
-    
+
     <!-- <div>Available Routes</div>  -->
 
     <h3>Local Activities</h3>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    San Fernando Valley Activities
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Activities
                 </div>
             </uib-accordion-heading>
             <a href="https://www.wbstudiotour.com/">- Warner Bros Studio Tour</a>
@@ -34,10 +34,10 @@
         </div>
     </uib-accordion>
     <uib-accordion>
-        <div uib-accordion-group class="panel-class">
-            <uib-accordion-heading class="bg-blue">
+        <div uib-accordion-group class="panel-class" is-open="status.isOpen">
+            <uib-accordion-heading class="bg-blue" ng-click="toggleOpen()">
                 <div uib-accordion-header>
-                    San Fernando Valley Shopping
+                    <i ng-class=" {'glyphicon glyphicon-minus-sign pull-right' : status.isOpen, 'glyphicon glyphicon-plus-sign pull-right' : !status.isOpen} "></i> San Fernando Valley Shopping
                 </div>
             </uib-accordion-heading>
             <a href="http://www.shermanoaksgalleria.com/">- Sherman Oaks Galleria</a>
@@ -48,11 +48,8 @@
         </div>
     </uib-accordion>
 
-    <h4>Cost</h4>
-    <uib-tabset active="active">
-        <uib-tab index="0" heading="Metro Basic">Metro basic includes....</uib-tab>
-        <uib-tab index="1" heading="Metro Plus">Metro plus includes....</uib-tab>
-        <uib-tab index="2" heading="Super Metro Plus">Super metro plus includes....</uib-tab>
-        <hr />
-    </uib-tabset>
+    <div>
+        <h3>Hubub Metro Services</h3>
+        <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
+    </div>
 </div>
