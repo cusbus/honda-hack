@@ -3,7 +3,7 @@
         <label for="services"></label>
         <h4>Metro/Hubub Service Packages:</h4>
         <uib-tabset active="">
-            <uib-tab index="0" heading="Metro Basic"> {{$ctrl.hub}} Hubbub Basic ${{$ctrl.rates.metroP}}
+            <uib-tab index="0" heading="Metro Basic"> {{$ctrl.hub}} Hubbub Basic ${{$ctrl.rates.metroB}}
                 <br> Hubbub Basic includes 7-day standard access to all Metro services. Including:
                 <br>
                 <ul>
@@ -11,7 +11,7 @@
                     <li>Bus</li>
                     <li>Bike Share</li>
                     <button ui-sref="site.payment" class='btn btn-info pull-right'>
-                        Select</button>
+                        Purchase</button>
                 </ul>
             </uib-tab>
             <uib-tab index="1" heading="Metro Plus"> {{$ctrl.hub}} Hubbub Plus ${{$ctrl.rates.metroP}}
@@ -23,7 +23,7 @@
                     <li>Micro Shuttles to take you around the SubHub</li>
                 </ul>
                 <button ui-sref="site.payment" class='btn btn-info pull-right'>
-                    Select</button>
+                    Purchase</button>
             </uib-tab>
             <uib-tab index="2" heading="Metro Super Plus"> {{$ctrl.hub}} Hubbub SuperPlus ${{$ctrl.rates.metroSP}}
                 <br> Hubbub SuperPlus includes all Hubbub Basic and Plus services and enjoy the benefit of extended-range Hub2Hub
@@ -33,7 +33,7 @@
                     <li>Highest frequency of departures/pickups</li>
                 </ul>
                 <button ui-sref="site.payment" class='btn btn-info pull-right'>
-                    Select</button>
+                    Purchase</button>
             </uib-tab>
             <hr />
         </uib-tabset>
