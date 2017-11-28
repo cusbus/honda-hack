@@ -12,16 +12,12 @@
         $stateProvider
             .state('site.home', {
                 url: '/home',
-                abstract: true
-            })
-            .state('site.hub.la', {
-                url: '/hub-la',
+                //abstract: true
                 views: {
-                    'content@site': {
-                        templateUrl: 'client/site/hub-la/hub-la.html',
-                        controller: 'hubLaController as laCtrl'
-                    }
+                    templateUrl: 'client/site/home/home.html',
+                    controller: 'homeController as hCtrl'
                 }
             })
+            
     }
 })();
