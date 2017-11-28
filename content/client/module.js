@@ -7,8 +7,9 @@
         // 3rd party
         'ui.router',
         'ui.bootstrap',
+        "highcharts-ng",
         'toastr',
-
+        
         //base / common
         'client.layout',
         'client._common',
@@ -24,7 +25,8 @@
         'client.components',
         'client.map',
         'client.hub-oc',
-        'client.hubs'
+        'client.hubs',
+        "client.metrics"
     ])
 
     angular.module('client')
