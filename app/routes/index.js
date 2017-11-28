@@ -9,7 +9,7 @@ module.exports = router
 router.use(authenticate)
 
 // API routes (group routing modules here - no empty lines between)
-router.use('/api/hackers', hackersRoutes)
+router.use(require('../config/static.files'))
 // router.use('/api/entities', entitiesRoutes)
 // router.use('/api/examples', examplesRoutes)
 
