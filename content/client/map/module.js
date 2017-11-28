@@ -12,7 +12,8 @@
                 url: '/map',
                 views: {
                     'content@site': {
-                        templateUrl: 'client/map/map.html'
+                        templateUrl: 'client/map/map.html',
+                        controller:'mapController'
                     }
                 }
             })

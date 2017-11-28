@@ -3,9 +3,9 @@
     angular.module('client.layout')
         .controller('navbarController', NavBarController)
   
-        NavBarController.$inject = ['$window','userService'];
+        NavBarController.$inject = ['$window'];
   
-    function NavBarController($window, userService) {
+    function NavBarController($window) {
         var $ctrl = this;
 
         $ctrl.logout = () => {
