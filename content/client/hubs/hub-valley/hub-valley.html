@@ -8,11 +8,22 @@
         to do, it offers so much to those who visit. One of California’s biggest and most popular cities is Los Angeles and
         this fantastic destination needs to be on your radar! If you’re visiting West Coast USA or if you’re looking for
         somewhere new to explore, its got to be LA! Here are 10 reasons to visit Los Angeles on your next holiday!</p>
+    <div class="container">
+        <div class="row">
+            <h3>What's the Hubbub?</h3>
+            <div class='col-md-4'>
+                <map-component></map-component>
+            </div>
+            <div class="col-md-6">
+                <metrics-component></metrics-component>
+            </div>
+        </div>
 
-    <h3>What's the Hubbub?</h3>
-    <!-- ******************************** MAP GOES HERE **************************************** -->
+    </div>
+    <div>
+        <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
+    </div>
 
-    <!-- <div>Available Routes</div>  -->
 
     <h3>Local Activities</h3>
     <uib-accordion>
@@ -48,8 +59,5 @@
         </div>
     </uib-accordion>
 
-    <div>
-        <h3>Hubbub Metro Services</h3>
-        <shuttles-component rates="valCtrl.rates" hub="valCtrl.hub"></shuttles-component>
-    </div>
+
 </div>
