@@ -4,53 +4,42 @@
     angular
         .module('client.map')
         .controller('mapController', MapController);
-    MapController.$inject = ["toastr", "sendGridService"];
-    function MapController(toastr, sendGridService) {
-        var vm = this;
-        vm.total;
-
-        vm.initalizeMap = initalizeMap;
-        vm.mapLayers = mapLayers;
-        vm.mapStyling = mapStyling;
-        vm.mapInfoWindow = mapInfoWindow;
-        vm.mapEventListeners = mapEventListeners;
-        vm.layersArray = [];
-        var infowindow = new google.maps.InfoWindow();
+    MapController.$inject = ["mapServices"];
+    function MapController(mapServices) {
+        var $ctrl = this;
         var map;
+        $ctrl.total;
 
-        var myLatLng1 = { lat: 34.0562, lng: -118.2365 };
-        var myLatLng2 = { lat: 34.0739, lng: -118.2400 };
-
-
-        vm.$onInit = () => {
-            vm.initalizeMap();
-            vm.mapLayers();
-            // vm.mapStyling();
-            vm.mapInfoWindow();
-            vm.mapEventListeners();
+        $ctrl.$onInit = () => {
+            initalizeMap();
+            mapLayers();
+            mapEventListeners();
+            draggableRoutes();
         }
 
-
-        function initalizeMap() {
+        const initalizeMap=()=> {
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 13,
                 center: { lat: 34.041025, lng: -118.269642 }
             });
+        }
 
-            //draggable routes
-            var directionsService = new google.maps.DirectionsService;
-            var directionsDisplay = new google.maps.DirectionsRenderer({
-                draggable: true,
-                map: map,
-                panel: document.getElementById('right-panel')
-            });
-
-            directionsDisplay.addListener('directions_changed', function () {
-                computeTotalDistance(directionsDisplay.getDirections());
-            });
-
-            displayRoute('LA Convention Center, CA', 'Dodgers Stadium, CA', directionsService,
-                directionsDisplay);
+        let draggableRoutes = () =>{
+               var directionsService = new google.maps.DirectionsService;
+               var directionsDisplay = new google.maps.DirectionsRenderer({
+                   draggable: true,
+                   map: map,
+                   suppressBicyclingLayer: true
+                   // panel: document.getElementById('right-panel')
+   
+               });
+   
+               directionsDisplay.addListener('directions_changed', function () {
+                   computeTotalDistance(directionsDisplay.getDirections());
+               });
+   
+               displayRoute('LA Convention Center, CA', 'Dodgers Stadium, CA', directionsService,
+                   directionsDisplay);
         }
 
         function displayRoute(origin, destination, service, display) {
@@ -58,8 +47,12 @@
                 origin: origin,
                 destination: destination,
                 waypoints: null, //[{location: 'Adelaide, SA'}, {location: 'Broken Hill, NSW'}]
-                travelMode: 'DRIVING',
-                avoidTolls: true
+                travelMode: 'BICYCLING' //DRIVING,BICYCLING,TRANSIT,WALKING
+                // optimizeWaypoints: true,
+                // provideRouteAlternatives: true,
+                // avoidFerries: false,
+                // avoidHighways: true,
+                // avoidTolls: true,
             }, function (response, status) {
                 if (status === 'OK') {
                     display.setDirections(response);
@@ -70,92 +63,143 @@
         }
 
         function computeTotalDistance(result) {
-            var total = 0;
+            let total = 0;
             var myroute = result.routes[0];
             for (var i = 0; i < myroute.legs.length; i++) {
                 total += myroute.legs[i].distance.value;
             }
-            total = total / 1000/0.621371;
-            document.getElementById('total').innerHTML = total.toFixed(2) + ' mi';
+            // $ctrl.total = (total / 1000 / 0.621371).toFixed(2);
+            
+            total = (total / 1000 / 0.621371).toFixed(2);
+            document.getElementById('total').innerHTML = total + ' mi';
         }
 
-        vm.layer1 = new google.maps.TransitLayer();
-        vm.layer2 =new google.maps.TrafficLayer();
-        vm.layer3 = new google.maps.Data();
-        vm.layer4 = new google.maps.Data();
-        vm.layer5 = new google.maps.Data();
-        vm.layer6 = new google.maps.Data();
-        vm.bikeLayer = new google.maps.BicyclingLayer();
- 
-        function mapLayers() {
-            vm.geo1 = 'client/map/geojson/rec-parks.geojson';
-            vm.geo2 = 'client/map/geojson/hist-mon.geojson';
-            vm.geo3 = 'client/map/geojson/ped-dist.geojson';
-            vm.geo4 = 'client/map/geojson/bike.geojson';
+        //Map Layers
+        let trafficLayer;
+        let transitLayer;
+        let bikeWaysLayer;
+        let bikeShareLayer;
+        let monumentLayer;
+        let parkLayer;
 
-
-            vm.layer3.loadGeoJson(vm.geo1);
-            vm.layer4.loadGeoJson(vm.geo2);
-            vm.layer5.loadGeoJson(vm.geo3);
-            vm.layer6.loadGeoJson(vm.geo4);
-            
-            
-      
-
-            var bikeMarker = '../css/images/bikeshare2.png';
-            var parkMarker = '../css/images/nature2.png';
-            vm.layer1.setMap(map);
-            vm.layer2.setMap(map);
-            vm.layer3.setMap(map);
-            vm.layer4.setMap(map);
-            vm.layer5.setMap(map);
-            vm.layer6.setMap(map);
-            vm.bikeLayer.setMap(map);
-           vm.layer6.setStyle({icon: bikeMarker}) 
-           vm.layer3.setStyle({icon: parkMarker}) 
+        const mapLayers = () => {
+            getParks();
+            getBikeShare();
+            getBikeWays();
+            getTraffic();
+            getTransit();
+            getMonuments();
         }
 
-        function mapStyling(layer,color) {
+        let getTraffic = () => {
+            trafficLayer = new google.maps.TrafficLayer();
+            // trafficLayer.setMap(map);
+        }
+
+        let getTransit = () => {
+            transitLayer = new google.maps.TransitLayer();
+            // transitLayer.setMap(map);
+        }
+
+        let getMetroLinkStops = () => {
+            mapServices.getMetroLinkStops()
+                .then(function (data) {
+                    $ctrl.metroStopsLayer = new google.maps.Data();
+                    $ctrl.metroStopsLayer.addGeoJson(data);
+                    // $ctrl.metroStopsLayer.setMap(map);
+                })
+                .catch(onGetError)
+        }
+
+        let getBikeWays = () => {
+            mapServices.getBikeWays()
+                .then(function (data) {
+                    bikeWaysLayer = new google.maps.Data();
+                    bikeWaysLayer.addGeoJson(data);
+                    let bikeWaysStyle = {
+                        strokeColor: "#ff3df2",
+                        strokeWeight: 3
+                    }
+                    layerStyling(bikeWaysLayer, bikeWaysStyle);
+                })
+            bikeWaysLayer = new google.maps.Data();
+            // bikeLanesLayer.setMap(map)
+        }
+
+        let getBikeShare = () => {
+            let bikeMarker = '../css/images/bikeshare2.png';
+            let bikeShareJSON = 'client/map/geojson/bike.geojson';
+            bikeShareLayer = new google.maps.Data();
+            bikeShareLayer.setStyle({ icon: bikeMarker });
+            bikeShareLayer.loadGeoJson(bikeShareJSON);
+            // bikeShareLayer.setMap(map);
+        }
+
+        let getParks = () => {
+            mapServices.getParks()
+                .then(function (data) {
+                    parkLayer = new google.maps.Data();
+                    parkLayer.addGeoJson(data);
+                    let parkMarker = '../css/images/nature2.png';
+                    let parkStyle = {
+                        fillColor: "rgb(12, 252, 184)",
+                        fillOpacity: .9,
+                        strokeColor: "orange",
+                        strokeWeight: 1
+                    }
+                    layerStyling(parkLayer, parkStyle);
+                    // parkLayer.setMap(map);
+                })
+                .catch(onGetError)
+        }
+
+        let getMonuments = () => {
+            mapServices.getMonuments()
+                .then(function (data) {
+                    monumentLayer = new google.maps.Data();
+                    monumentLayer.addGeoJson(data);
+                    let monumentStyle = {
+                        fillColor: 'purple',
+                        strokeColor: 'purple',
+                        strokeWeight: 1
+                    }
+                    layerStyling(monumentLayer, monumentStyle);
+                    mapInfoWindow(monumentLayer);
+                    // monumentLayer.setMap(map);
+                })
+        }
+
+
+        //STYLE LAYERS
+        let layerStyling = (layer, style) => {
             layer.setStyle({
-                fillColor: color,
-                strokeWeight: 1
+                fillColor: style.fillColor,
+                fillOpacity: style.fillOpacity,
+                strokeColor: style.strokeColor,
+                strokeOpacity: style.strokeOpacity,
+                strokeWeight: style.strokeWeight
             });
         }
-        mapStyling(vm.layer4,'purple');
 
-        function mapInfoWindow() {
-            vm.layer4.addListener('click', function (event) {
-                var data = event.feature.f
-                vm.table = '<div id="iw-container">' +
-                `<div class="iw-title">${data.NAME}</div>` +
-                '<div class="iw-content">' +
-                  '<div class="iw-subTitle">History</div>' +
-                  '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                  '<p>The written history of Los Angeles city and county began with a Colonial Mexican town that was founded by 11 Mexican families which were known as " Los Pobladores" that established a settlement in Southern California that changed little in the three decades after 1848, when California became part of the United States.</p>' +
-                  '<div class="iw-subTitle">Contacts</div>' +
-                  '<p>Los Angeles, CA<br><br>'+
-                  '<br>Phone. +2135554568<br>e-mail: losangeles@email.com<br>www: www.website.com</p>'+
-                '</div>' +
-                '<div class="iw-bottom-gradient"></div>' +
-                '</div>';
+        //ADD EVENT LISTENERS
+        let infowindow = new google.maps.InfoWindow();
+        function mapInfoWindow(layer, content) {
+            layer.addListener('click', function (event) {
+                let data = event.feature.f
+                let content = '<div id="iw-container">' +
+                    `<div class="iw-title">${data.NAME}</div>` +
+                    '<div class="iw-content">' +
+                    '<div class="iw-subTitle">History</div>' +
+                    '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                    '<p>The written history of Los Angeles city and county began with a Colonial Mexican town that was founded by 11 Mexican families which were known as " Los Pobladores" that established a settlement in Southern California that changed little in the three decades after 1848, when California became part of the United States.</p>' +
+                    '<div class="iw-subTitle">Contacts</div>' +
+                    '<p>Los Angeles, CA<br><br>' +
+                    '<br>Phone. +2135554568<br>e-mail: losangeles@email.com<br>www: www.website.com</p>' +
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                    '</div>';
 
-
-                // vm.table = document.createElement("table");
-                // for (var name in data) {
-                    // var value = data[name];
-                    // console.log(data);
-                    // var value = data.NAME;
-                    
-                    // var tr = document.createElement('tr');
-                    // var leftRow = document.createElement('td');
-                    // leftRow.innerHTML = name;
-                    // tr.appendChild(leftRow);
-                    // var rightRow = document.createElement('td');
-                    // rightRow.innerHTML = value;
-                    // tr.appendChild(rightRow);
-                    // vm.table.appendChild(tr);
-                // }
-                infowindow.setContent(vm.table);
+                infowindow.setContent(content);
                 infowindow.setPosition(event.latLng);
                 infowindow.setOptions({ pixelOffset: new google.maps.Size(0, -34) });
                 infowindow.open(map);
@@ -174,25 +218,26 @@
             });
         }
 
-        vm.toggleLayer1 = () => {
-            vm.layer1.setMap(vm.layer1.getMap() ? null : map);
+        //TOGGLE LAYERS
+        $ctrl.toggleTraffic = () => {
+            trafficLayer.setMap(trafficLayer.getMap() ? null : map);
         }
-        vm.toggleLayer2 = () => {
-            vm.layer2.setMap(vm.layer2.getMap() ? null : map);
+        $ctrl.toggleTransit = () => {
+            transitLayer.setMap(transitLayer.getMap() ? null : map);
         }
-        vm.toggleLayer3 = () => {
-            vm.layer3.setMap(vm.layer3.getMap() ? null : map);
+        $ctrl.toggleParks = () => {
+            parkLayer.setMap(parkLayer.getMap() ? null : map);
         }
-        vm.toggleLayer4 = () => {
-            vm.layer4.setMap(vm.layer4.getMap() ? null : map);
+        $ctrl.toggleMonuments = () => {
+            monumentLayer.setMap(monumentLayer.getMap() ? null : map);
         }
-        vm.toggleLayer5 = () => {
-            vm.layer5.setMap(vm.layer5.getMap() ? null : map);
-        }
-        vm.toggleLayer6 = () => {
-            vm.bikeLayer.setMap(vm.bikeLayer.getMap() ? null : map);
-            vm.layer6.setMap(vm.layer6.getMap() ? null : map);
+        $ctrl.toggleBikeshare = () => {
+            bikeShareLayer.setMap(bikeShareLayer.getMap() ? null : map);
+            bikeWaysLayer.setMap(bikeWaysLayer.getMap() ? null : map);
         }
 
+        function onGetError(error) {
+            console.log(error);
+        }
     }
 })();
