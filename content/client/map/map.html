@@ -1,13 +1,13 @@
+
 <div id="floating-panel">
-        <button type="button" class="btn btn-warning" ng-click="mapCtrl.toggleLayer2()">Traffic</button>
-    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleLayer1()">TrainRoutes</button>
-    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleLayer3()">Recs and Parks</button>
-    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleLayer4()">Historical Monuments</button>
-    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleLayer5()">Pedestrian Friendly</button>
-    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleLayer6()">Bike Share</button>
+    <button type="button" class="btn btn-warning" ng-click="mapCtrl.toggleTraffic()">Traffic</button>
+    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleTransit()">Metro</button>
+    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleParks()">Parks</button>
+    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleMonuments()">Historical POI</button>
+    <button type="button" class="btn btn-info" ng-click="mapCtrl.toggleBikeshare()">Bike Share</button>
     <button type="button" class="btn btn-success" id='total' disabled style="color:rgb(10, 1, 95); opacity:1"></button>
-    
 </div>
+
 <div class="col-md-12">
     <div class='row'>
         <div style="height:800px; width:100%" id="map"></div>
