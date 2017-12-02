@@ -9,6 +9,7 @@
     function HubValleyController($log, $window) {
         var vm = this
         vm.hub = "San Fernando Valley"
+        vm.state = 'hub-valley'
         vm.rates = {
             metroB: '175.95',
             metroP: '225.95',

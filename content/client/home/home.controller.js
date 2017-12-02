@@ -7,6 +7,7 @@
 
     function HomeController($state) {
         var $ctrl = this;
+        $ctrl.state = "home";
 
         $ctrl.redirect = _redirect
         

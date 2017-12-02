@@ -8,6 +8,7 @@
 
     function HubInlandEmpireController($log, $window) {
         var vm = this
+        vm.state = 'hub-ie'
         vm.hub = "Inland Empire"
         vm.rates = {
             metroB: '135.95',

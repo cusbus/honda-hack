@@ -8,6 +8,7 @@
 
     function HubLaController($log, $window) {
         var vm = this
+        vm.state = 'hub-la'
 
         init()
         vm.hub = "Los Angeles"
